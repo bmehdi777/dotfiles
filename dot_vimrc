@@ -1,0 +1,161 @@
+" Preferences
+
+" Cursor
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+augroup reset_cursor_shape
+  au!
+  autocmd VimEnter * normal! :startinsert :stopinsert
+  autocmd VimEnter * redraw!
+augroup END
+
+" transparency
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_transparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
+
+
+"" Numbers in left 
+set number
+set relativenumber
+
+" Ignore case in search
+set ignorecase
+set smartcase
+
+" Encoding
+set encoding=UTF-8
+
+" Mouse support
+set mouse=a
+
+" Replace tabs with spaces
+set expandtab
+
+" Don’t add empty newlines at the end of files
+set binary
+set noeol
+
+"Change the number of space characters inserted for indentation
+set shiftwidth=4
+
+"Makes the spaces feel like real tabs
+set softtabstop=4
+
+
+" Kernel dev - highlight and put cc to match kernel coding style
+function ToggleKernelSyntax()
+  if &cc == ''
+    " 80 characters line
+    set colorcolumn=81
+    "execute "set colorcolumn=" . join(range(81,335), ',')
+    highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+    " Highlight trailing spaces
+    " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+    augroup matchSpace
+      au!
+      autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+      autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+      autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+      autocmd BufWinLeave * call clearmatches()
+    augroup END
+  else
+    set cc=
+    highlight ExtraWhitespace none
+  endif
+endfunction
+
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'ap/vim-css-color'
+Plug 'scrooloose/nerdtree' " File tree
+Plug 'sheerun/vim-polyglot' " Code highlight
+Plug 'jiangmiao/auto-pairs' " Auto close bracket
+Plug 'vim-airline/vim-airline' " Status bar
+Plug 'vim-airline/vim-airline-themes' " Status bar themes
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'bogado/file-line'
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" CoC extension
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+call plug#end()
+
+" Tagbar resize
+
+" Mapping
+map <C-b> :NERDTreeToggle<CR>
+map <C-i> gt " tab switching
+map <F8> :TagbarToggle<CR>
+" FZF
+map <C-p> :Files<CR>
+map <C-g> :Commits<CR>
+"map <C-b> :BLines<CR>
+
+
+" Window Navigation with Ctrl-[hjkl]
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+" Configuration of plugins
+" Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#formatter = 'default'
+set listchars=tab:▸\ ,eol:¬\,nbsp:␣,trail:•,space:·
+
+" NERDTree
+let NERDTreeShowHidden=1
+
+" Theme - Tokyonight
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
+
+" Tagbar
+let g:tagbar_width = 80
+
+" CoC keybind
+" Jump code
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" List symbols
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" trigger completion menu
+inoremap <silent><expr> <C-@> coc#refresh()
+" navigation into completion menu 
+inoremap <silent><expr> <C-j>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Transparent
+call Toggle_transparent()

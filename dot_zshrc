@@ -1,0 +1,33 @@
+export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="vim"
+
+plugins=(git z tmux sudo colored-man-pages zsh-autosuggestions fzf )
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=false
+
+source $ZSH/oh-my-zsh.sh
+
+# Export section
+#export GOPATH=/usr/local/go
+#export PATH=/usr/local/opt/python@3.7/bin:$PATH
+#export HOMEBREW_NO_AUTO_UPDATE=1
+#export PATH=/Applications/MAMP/bin/php/php8.0.8/bin:$PATH
+
+# FZF
+export FZF_DEFAULT_COMMAND='find -L'
+export FZF_COMPLETION_TRIGGER='**' # can change ** to whatever you like
+export FZF_DEFAULT_OPTS='--preview "batcat  --style=numbers --color=always --line-range :500 {}" -m --height 50% --border'
+
+
+# Logisim
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Aliases section
+source ~/.zsh_aliases
+
+# Prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
