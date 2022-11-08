@@ -5,7 +5,6 @@ pgrep -x sxhkd > /dev/null || sxhkd -r ~/.sxhkd.log &
 picom &
 feh --bg-fill ~/Images/Wallpaper/wallpaper.jpg &
 sh ~/.config/polybar/launch.sh &
-rofi -show run
 
 # Monitor 
 # 1 2 3 4 5 6 7 = Spotify Chat Others1 Terminal Web Files Others
