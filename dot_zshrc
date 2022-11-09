@@ -1,10 +1,14 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 
-plugins=(git z tmux sudo colored-man-pages zsh-autosuggestions fzf )
+plugins=(git z sudo colored-man-pages zsh-autosuggestions fzf )
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 source $ZSH/oh-my-zsh.sh
 
