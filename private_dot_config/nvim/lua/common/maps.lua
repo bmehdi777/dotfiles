@@ -11,5 +11,5 @@ nnoremap("<C-k>", ":wincmd k<CR>")
 nnoremap("<C-l>", ":wincmd l<CR>")
 
 -- Yank to clipboard
-vnoremap("<leader>y", '"y+')
-nnoremap("<leader>y", '"y+')
+vnoremap("<leader>y", '"+y')
+nnoremap("<leader>y", '"+y')

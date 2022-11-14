@@ -4,7 +4,12 @@ return require('packer').startup(function()
 	use "wbthomason/packer.nvim"
 
 	-- LSP File config
-	use "neovim/nvim-lspconfig"
+	use({
+		"neovim/nvim-lspconfig",
+		requires = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		}})
 
 	-- Theme
 	use "folke/tokyonight.nvim"
@@ -20,6 +25,8 @@ return require('packer').startup(function()
 	use "saadparwaiz1/cmp_luasnip"
 	use "hrsh7th/nvim-cmp" -- Completion plugin
 	use "hrsh7th/cmp-path" -- Path completions
+	use "hrsh7th/cmp-nvim-lsp" 
+	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- Other
 	use {
