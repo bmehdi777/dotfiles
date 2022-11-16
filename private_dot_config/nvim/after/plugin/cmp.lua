@@ -1,5 +1,10 @@
-local status, cmp = pcall(require, "cmp")
-if not status then
+local status_cmp, cmp = pcall(require, "cmp")
+if not status_cmp then
+	return
+end
+
+local status_luasnip, luasnip = pcall(require, "luasnip")
+if not status_luasnip then
 	return
 end
 
@@ -9,7 +14,7 @@ require("luasnip/loaders/from_vscode").lazy_load()
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = {

@@ -1,3 +1,3 @@
 require("common")
 
-require("impatient")
+pcall(require, "impatient")
