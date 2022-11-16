@@ -25,6 +25,7 @@ cmp.setup({
 	sources = {
 		{ name = "luasnip" },
 		{ name = "path" },
-		{ name = "nvim_lsp"}
+		{ name = "nvim_lsp"},
+		{ name = "buffer"}
 	}
 })

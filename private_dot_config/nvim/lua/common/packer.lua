@@ -28,8 +28,12 @@ return require('packer').startup(function()
 	use "saadparwaiz1/cmp_luasnip"
 	use "hrsh7th/nvim-cmp" -- Completion plugin
 	use "hrsh7th/cmp-path" -- Path completions
+	use "hrsh7th/cmp-buffer" -- buffer completions
 	use "hrsh7th/cmp-nvim-lsp" 
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+	-- Git sugar
+	use "lewis6991/gitsigns.nvim"
 
 	-- Other
 	use {
