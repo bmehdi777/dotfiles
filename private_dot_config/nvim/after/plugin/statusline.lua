@@ -5,7 +5,7 @@ end
 
 lualine.setup {
 	options = { 
-		theme = "palenight",
+		theme = "tokyonight",
 		section_separators = '', component_separators = '',
 		globalstatus = true,
 	},
