@@ -35,6 +35,11 @@ return require('packer').startup(function()
 	-- Git sugar
 	use "lewis6991/gitsigns.nvim"
 
+	-- Status line
+	use {
+		'nvim-lualine/lualine.nvim',
+	}
+
 	-- Other
 	use {
 		"windwp/nvim-autopairs",
