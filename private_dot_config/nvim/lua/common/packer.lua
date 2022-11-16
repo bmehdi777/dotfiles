@@ -20,6 +20,9 @@ return require('packer').startup(function()
 		requires = { {"nvim-lua/plenary.nvim"} } -- required by nvim-telescope
 	}
 
+	-- Tree
+	use "nvim-tree/nvim-tree.lua"
+
 	-- Completion - cmp
 	use "L3MON4D3/LuaSnip" -- Snippet for cmp
 	use "saadparwaiz1/cmp_luasnip"
