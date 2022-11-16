@@ -1,0 +1,7 @@
+README.md
+{{ if eq .chezmoi.os "darwin"  }}
+.config/alacritty
+.config/bspwm
+.config/rofi
+.config/sxhkd
+{{ end }}
