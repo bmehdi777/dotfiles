@@ -1,7 +1,0 @@
-0000000000000000000000000000000000000000 5a30554516a1dba3c7eccac60224e94a98d3338d Mehdi <mehdi.bentouati76@gmail.com> 1668594286 +0100	clone: from git@github.com:bmehdi777/dotfiles.git
-5a30554516a1dba3c7eccac60224e94a98d3338d a8c2b650fbdc25d404b0f6cfb9d9f47abc590e7d Mehdi <mehdi.bentouati76@gmail.com> 1668595154 +0100	commit: Add .chezmoiignore
-a8c2b650fbdc25d404b0f6cfb9d9f47abc590e7d 59d030668dbceefa95e8c9b5ad8d0eb9b66c9831 Mehdi <mehdi.bentouati76@gmail.com> 1668595477 +0100	commit: Add .local/share/chezmoi/run_once_install-nvim.sh
-59d030668dbceefa95e8c9b5ad8d0eb9b66c9831 86b945ded8dfee7497efb0d420713c88b9f41f91 Mehdi <mehdi.bentouati76@gmail.com> 1668596037 +0100	commit: Update .local/share/chezmoi/run_once_install-nvim.sh
-86b945ded8dfee7497efb0d420713c88b9f41f91 91739ed7db07aafeb75c6444fdf0fc191c0f7ba2 Mehdi <mehdi.bentouati76@gmail.com> 1668596219 +0100	commit: Update .config/nvim/after/plugin/cmp.lua
-91739ed7db07aafeb75c6444fdf0fc191c0f7ba2 ce8e8f073d3225d32fca91054db8754f0c3f670b Mehdi <mehdi.bentouati76@gmail.com> 1668601442 +0100	commit: Update .local/share/chezmoi/run_once_install-nvim.sh
-ce8e8f073d3225d32fca91054db8754f0c3f670b 6f59aebb80c442cc33a8e4cfd0883f68c8ca7354 Mehdi <mehdi.bentouati76@gmail.com> 1668601703 +0100	commit: Change attributes of .zshrc
