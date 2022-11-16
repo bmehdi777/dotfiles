@@ -1,5 +1,5 @@
 README.md
-.config/nvim/plugin/
+.config/nvim/plugin/**
 {{ if eq .chezmoi.os "darwin"  }}
 .config/alacritty
 .config/bspwm
