@@ -51,6 +51,17 @@ return require('packer').startup(function()
 		'nvim-lualine/lualine.nvim',
 	}
 
+	-- Cheatsheet
+	use {
+		'sudormrfbin/cheatsheet.nvim',
+
+		requires = {
+			{'nvim-telescope/telescope.nvim'},
+			{'nvim-lua/popup.nvim'},
+			{'nvim-lua/plenary.nvim'},
+		}
+	}
+
 	-- Other
 	use {
 		"windwp/nvim-autopairs",

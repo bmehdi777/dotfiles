@@ -20,4 +20,9 @@ nnoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
 inoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
 
 -- Prettier
-nnoremap("<leader>f", ":Prettier<CR>", { silent=true })
+nnoremap("<leader>fp", ":Prettier<CR>", { silent=true })
+
+-- Cheatsheet
+nnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
+inoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
+vnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })

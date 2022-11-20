@@ -13,5 +13,11 @@ prettier.setup({
 		"json",
 		"markdown",
 		"yaml"
+	},
+	cli_options = {
+		tab_width = 4,
+		use_tabs = true,
+		semi = true,
+		single_quote = false,
 	}
 })

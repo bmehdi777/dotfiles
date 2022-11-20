@@ -1,0 +1,21 @@
+# Personnal cheatsheet for vim
+
+## Telescope
+Find files | <C-p>
+Live grep | <C-f>
+See buffers | <leader>fb
+Git branches | <leader>gb
+Git commits | <leader>gc
+
+## NvimTree
+Toggle the tree | <C-b>
+
+## Prettier
+Format file | <leader>fp
+
+## Other
+Navigate to left pane | <C-h>
+Navigate to bottom pane | <C-j>
+Navigate to top pane | <C-k>
+Navigate to right pane | <C-l>
+Yank to clipboard | <leader>y
