@@ -18,3 +18,6 @@ nnoremap("<leader>y", '"+y')
 -- Tree
 nnoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
 inoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
+
+-- Prettier
+nnoremap("<leader>f", ":Prettier<CR>", { silent=true })

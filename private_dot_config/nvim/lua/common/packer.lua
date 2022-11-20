@@ -10,6 +10,8 @@ return require('packer').startup(function()
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		}})
+	use "jose-elias-alvarez/null-ls.nvim"
+	use "MunifTanjim/prettier.nvim"
 
 	-- Theme
 	use "folke/tokyonight.nvim"
@@ -22,6 +24,15 @@ return require('packer').startup(function()
 
 	-- Tree
 	use "nvim-tree/nvim-tree.lua"
+
+	-- Color syntax
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	}
 
 	-- Completion - cmp
 	use "L3MON4D3/LuaSnip" -- Snippet for cmp
@@ -45,6 +56,8 @@ return require('packer').startup(function()
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
+	use "windwp/nvim-ts-autotag"
+
 	use "lewis6991/impatient.nvim"
 
 end)
