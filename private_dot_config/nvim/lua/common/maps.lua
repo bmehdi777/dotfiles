@@ -17,7 +17,7 @@ nnoremap("<leader>y", '"+y')
 
 -- Tree
 nnoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
-inoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
+inoremap("<C-b>", "<ESC>:NvimTreeToggle<CR>", { silent=true })
 
 -- Prettier
 nnoremap("<leader>fp", ":Prettier<CR>", { silent=true })
