@@ -5,4 +5,7 @@ README.md
 .config/bspwm
 .config/rofi
 .config/sxhkd
+.xsessionrc
+.xsessionrc_vertical
+.xinitrc
 {{ end }}
