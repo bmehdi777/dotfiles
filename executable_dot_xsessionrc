@@ -1,0 +1,11 @@
+#! /bin/bash
+
+xrandr --output DP-0 --primary --mode 1920x1200 --rotate normal --pos 1200x480 \
+			 --output DP-1-1 --mode 1920x1200 --rotate left --pos 0x0
+
+# For my headset
+pactl set-default-sink alsa_output.usb-SteelSeries_Arctis_Pro_Wireless-00.analog-stereo
+
+setxkbmap fr
+xset r rate 400 50
+xsetroot -cursor_name left_ptr
