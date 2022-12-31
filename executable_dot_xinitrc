@@ -1,0 +1,2 @@
+sxhkd &
+exec bspwm 2>~/.bspwm.err > ~/.bspwm.log &
