@@ -13,7 +13,8 @@ telescope.setup {
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
 
-				["<esc>"] = actions.close
+				["<C-s>"] = actions.select_horizontal,
+				["<esc>"] = actions.close,
 			},
 			n = {
 				["<esc>"] = actions.close,

@@ -7,11 +7,39 @@ See buffers | <leader>fb
 Git branches | <leader>gb
 Git commits | <leader>gc
 
+## Telescope-inside
+Move up | <C-k>
+Move down | <C-j>
+Open horizontal | <C-s>
+Open vertical | <C-v>
+Close | <esc>
+
 ## NvimTree
 Toggle the tree | <C-b>
+Open vertical split | <C-v>
+Open horizontal split | <C-s>
 
 ## Prettier
 Format file | <leader>fp
+
+## Buffer
+Go to first buffer | <leader>bf
+Go to last buffer | <leader>bl
+Go to previous buffer | <leader>bp
+Go to next buffer | <leader>bn
+Close buffer | <leader>bc
+
+## Tab
+Go to first tab | <leader>tf
+Go to last tab | <leader>tl
+Go to next tab | <leader>tn
+Go to previous tab | <leader>tp
+Close tab | <leader>tc
+
+## Register
+See register | <leader>reg
+Yank to register X (0-9)| "Xy
+Past from register X (0-9)| "Xp
 
 ## Other
 Navigate to left pane | <C-h>

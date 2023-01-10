@@ -26,3 +26,19 @@ nnoremap("<leader>fp", ":Prettier<CR>", { silent=true })
 nnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
 inoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
 vnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
+
+-- Buffer
+nnoremap("<leader>bf",":bf<CR>", { silent=true })
+nnoremap("<leader>bl",":bl<CR>", { silent=true })
+nnoremap("<leader>bn",":bn<CR>", { silent=true })
+nnoremap("<leader>bp",":bp<CR>", { silent=true })
+nnoremap("<leader>bc",":bw<CR>", { silent=true })
+-- Tab
+nnoremap("<leader>tn", ":tabn<CR>", { silent=true })
+nnoremap("<leader>tp", ":tabp<CR>", { silent=true })
+nnoremap("<leader>tl", ":tabl<CR>", { silent=true })
+nnoremap("<leader>tf", ":tabr<CR>", { silent=true })
+nnoremap("<leader>tc", ":tabc<CR>", { silent=true })
+
+-- Register
+nnoremap("<leader>reg", ":reg<CR>", { silent=true })

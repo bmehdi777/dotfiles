@@ -13,6 +13,14 @@ tree.setup({
 				git = false
 			},
 		}
+	},
+	view = {
+		adaptive_size = true,
+		mappings = {
+			list = {
+				{ key = "<C-s>", action="split"}
+			}
+		}
 	}
 });
 
