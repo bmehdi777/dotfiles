@@ -50,4 +50,3 @@ require("mason-lspconfig").setup_handlers({
 --  opts.border = opts.border or border
 --  return orig_util_open_floating_preview(contents, syntax, opts, ...)
 --end
---
