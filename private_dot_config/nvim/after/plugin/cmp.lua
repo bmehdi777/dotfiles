@@ -20,7 +20,7 @@ cmp.setup({
 	mapping = {
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<CR>"] = cmp.mapping.confirm { select = false },
+		["<C-Space>"] = cmp.mapping.confirm { select = true },
 	},
 	sources = {
 		{ name = "luasnip" },
