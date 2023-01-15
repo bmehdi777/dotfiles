@@ -15,6 +15,7 @@ return require('packer').startup(function()
 
 	-- Theme
 	use "folke/tokyonight.nvim"
+	use { "ellisonleao/gruvbox.nvim" }
 
 	-- Telescope
 	use { 
