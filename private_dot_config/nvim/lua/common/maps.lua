@@ -24,8 +24,6 @@ nnoremap("<leader>fp", ":Prettier<CR>", { silent=true })
 
 -- Cheatsheet
 nnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
-inoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
-vnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
 
 -- Buffer
 nnoremap("<leader>bf",":bf<CR>", { silent=true })
