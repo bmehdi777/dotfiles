@@ -45,5 +45,3 @@ nnoremap("<leader>reg", ":reg<CR>", { silent=true })
 
 -- Error display
 nnoremap("<space>e", ":lua vim.diagnostic.open_float()<CR>", { silent=true })
-inoremap("<space>e", ":lua vim.diagnostic.open_float()<CR>", { silent=true })
-vnoremap("<space>e", ":lua vim.diagnostic.open_float()<CR>", { silent=true })
