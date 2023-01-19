@@ -1,6 +1,7 @@
 README.md
 .config/nvim/plugin/**
 {{ if eq .chezmoi.os "darwin"  }}
+Images/Wallpaper
 .config/alacritty
 .config/bspwm
 .config/rofi
