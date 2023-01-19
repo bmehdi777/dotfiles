@@ -43,3 +43,8 @@ nnoremap("<leader>reg", ":reg<CR>", { silent=true })
 
 -- Error display
 nnoremap("<space>e", ":lua vim.diagnostic.open_float()<CR>", { silent=true })
+
+-- F1 key pisses me off
+inoremap("<F1>", "", { silent=true }) 
+vnoremap("<F1>", "", { silent=true }) 
+nnoremap("<F1>", "", { silent=true }) 
