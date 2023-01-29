@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1
+  opacity: 0.9
 
   # Startup Mode (changes require restart)
   #
@@ -1030,7 +1030,36 @@ schemes:
       cyan:    '0x0db9d7'
       white:   '0xacb0d0'
 
+  argonaut: &argonaut
+    bright:
+      black: '#444444'
+      blue: '#0092ff'
+      cyan: '#67fff0'
+      green: '#abe15b'
+      magenta: '#9a5feb'
+      red: '#ff2740'
+      white: '#ffffff'
+      yellow: '#ffd242'
+    cursor:
+      cursor: '#ff0018'
+      text: '#ff0018'
+    normal:
+      black: '#232323'
+      blue: '#008df8'
+      cyan: '#00d8eb'
+      green: '#8ce10b'
+      magenta: '#6d43a6'
+      red: '#ff000f'
+      white: '#ffffff'
+      yellow: '#ffb900'
+    primary:
+      background: '#0e1019'
+      foreground: '#fffaf4'
+    selection:
+      background: '#002a3b'
+      text: '#ffffff'
 
 
-colors: *tokyo-night
+
+colors: *argonaut
 
