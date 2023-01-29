@@ -1,0 +1,72 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$username@$hostname $status$character"""
+right_format = """
+$cmd_duration\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_metrics\
+"""
+
+add_newline = false
+
+[username]
+disabled = false
+show_always = true
+format = "[$user](yellow)"
+
+[hostname]
+format = "[$hostname](yellow)"
+disabled = false
+ssh_only = false
+
+[directory]
+truncation_length = 3
+format = "[ $path ](purple)"
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = '[❯](blue)'
+error_symbol = '[❯](bold red)'
+
+[cmd_duration]
+min_time = 500
+format = '[$duration](yellow)'
+
+[status]
+disabled = false
+format = "[$int](red)"
+
+[time]
+disabled = true
+format = '[\[$time\]](grey)'
+time_format = "%R"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+only_attached = false
+
+[git_commit]
+disabled = false
+commit_hash_length = 4
+format = "[ #$hash$tag](bright-black)"
+only_detached = true
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
