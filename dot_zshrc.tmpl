@@ -33,7 +33,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Aliases section
 source ~/.zsh_aliases
 
+
 # Prompt
-autoload -U promptinit; promptinit
-prompt typewritten
-TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
+
+eval "$(starship init zsh)"
+
