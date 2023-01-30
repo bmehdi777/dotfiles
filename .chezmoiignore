@@ -1,4 +1,4 @@
-README.md
+readme.md
 .config/nvim/plugin/**
 {{ if eq .chezmoi.os "darwin"  }}
 Images/Wallpaper
