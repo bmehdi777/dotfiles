@@ -9,4 +9,5 @@ Images/Wallpaper
 .xsessionrc
 .xsessionrc_vertical
 .xinitrc
+.local/share/fonts
 {{ end }}
