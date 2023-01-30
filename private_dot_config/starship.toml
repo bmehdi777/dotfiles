@@ -45,13 +45,13 @@ format = "[$int](red)"
 
 [time]
 disabled = true
-format = '[\[$time\]](grey)'
+format = '[\[$time\]](purple)'
 time_format = "%R"
 
 [git_branch]
 symbol = " "
 format = "[$symbol$branch]($style) "
-style = "bright-black"
+style = "#ff3399"
 only_attached = false
 
 [git_commit]
