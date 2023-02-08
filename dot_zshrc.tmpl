@@ -5,9 +5,6 @@ source ~/.zsh_color_syntax
 
 plugins=(git z sudo colored-man-pages zsh-autosuggestions fzf zsh-syntax-highlighting)
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
-
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
@@ -29,10 +26,11 @@ export FZF_DEFAULT_COMMAND='find -L'
 export FZF_COMPLETION_TRIGGER='**' # can change ** to whatever you like
 export FZF_DEFAULT_OPTS='--preview "batcat  --style=numbers --color=always --line-range :500 {}" -m --height 50% --border'
 
-
+{{ if eq .chezmoi.os "linux" }}
 # Logisim
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
+{{ end }}
 
 # Aliases section
 source ~/.zsh_aliases
