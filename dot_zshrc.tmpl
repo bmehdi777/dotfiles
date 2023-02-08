@@ -13,6 +13,12 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -v
 
+bindkey -v
+bindkey "^I" fzf-completion
+bindkey "^R" fzf-history-widget
+bindkey "^T" fzf-file-widget
+bindkey "^[c" fzf-cd-widget
+
 # Export section
 {{ if eq .chezmoi.os "darwin" }}
 export GOPATH=/usr/local/go
