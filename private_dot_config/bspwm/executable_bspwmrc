@@ -9,7 +9,7 @@ sh ~/.config/polybar/launch.sh &
 
 # Monitor 
 # 1 2 3 4 5 6 7 = Spotify Chat Others1 Terminal Web Files Others
-bspc monitor "DP-1-1" -d 1 2 3 4 
+bspc monitor "$DISPLAY_SECONDARY" -d 1 2 3 4 
 bspc monitor -d 5 6 7 8
 
 # BSPWM config
