@@ -1,7 +1,9 @@
 #! /bin/bash
 
+export DISPLAY_SECONDARY=$(xrandr --query | grep " connected"| cut -d ' ' -f 1 | grep '^DP-1')
+
 xrandr --output DP-0 --primary --mode 1920x1200 --rotate normal --pos 1920x0 \
-			 --output DP-1-1 --mode 1920x1200 --rotate normal --pos 0x0
+	   --output $DISPLAY_SECONDARY --mode 1920x1200 --rotate normal --pos 0x0
 
 # For my headset
 pactl set-default-sink alsa_output.usb-SteelSeries_Arctis_Pro_Wireless-00.analog-stereo
