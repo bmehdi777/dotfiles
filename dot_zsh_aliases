@@ -10,3 +10,5 @@ alias pip='python3 -m pip'
 alias dus='du -sh'
 
 alias vim='nvim'
+alias bat='batcat'
+alias cat='batcat'
