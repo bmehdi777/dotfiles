@@ -41,6 +41,9 @@ See register | <leader>reg
 Yank to register X (0-9)| "Xy
 Past from register X (0-9)| "Xp
 
+## LSP
+See error details | <space>e
+
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>
