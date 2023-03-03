@@ -10,5 +10,9 @@ alias pip='python3 -m pip'
 alias dus='du -sh'
 
 alias vim='nvim'
+{{ if eq .chezmoi.os "darwin"}}
+alias cat='bat'
+{{ else }}
 alias bat='batcat'
 alias cat='batcat'
+{{ end }}
