@@ -48,3 +48,6 @@ nnoremap("<space>e", ":lua vim.diagnostic.open_float()<CR>", { silent=true })
 inoremap("<F1>", "", { silent=true }) 
 vnoremap("<F1>", "", { silent=true }) 
 nnoremap("<F1>", "", { silent=true }) 
+
+-- Rust
+nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>",  { silent=true })

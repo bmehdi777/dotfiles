@@ -41,6 +41,9 @@ See register | <leader>reg
 Yank to register X (0-9)| "Xy
 Past from register X (0-9)| "Xp
 
+## Rust
+Rust format | <leader>rfmt
+
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>
