@@ -10,4 +10,5 @@ Images/Wallpaper
 .xsessionrc_vertical
 .xinitrc
 .local/share/fonts
+.fehbg
 {{ end }}
