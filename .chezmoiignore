@@ -12,3 +12,5 @@ Images/Wallpaper
 .local/share/fonts
 .fehbg
 {{ end }}
+Images/**
+.local/share/fonts/**
