@@ -44,9 +44,6 @@ Past from register X (0-9)| "Xp
 ## Rust
 Rust format | <leader>rfmt
 
-## LSP
-See error details | <space>e
-
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>
