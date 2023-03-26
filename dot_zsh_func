@@ -1,0 +1,40 @@
+function ga() {
+  # Add files if passed as arguments
+  [[ $# -ne 0 ]] && git add "$@" && git status -su && return
+
+  local changed unmerged untracked
+  changed=$(git config --get-color color.status.changed red)
+  unmerged=$(git config --get-color color.status.unmerged red)
+  untracked=$(git config --get-color color.status.untracked red)
+
+  git -c color.status=always status -su | grep -F -e "${untracked}" -e "${changed}" -e "${unmerged}" |
+    sed -E 's/^(..[^[:space:]]*)[[:space:]]+(.*)$/\1  \2/' |
+    fzf --multi --bind ctrl-a:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
+      --preview 'git diff --color=always {2}' | awk '{print $2}' | xargs git add
+}
+function gbf() {
+    result=$(git branch -a --color=always | grep -v '/HEAD\s' | sort |
+        fzf --height 50% --border --ansi --tac --preview-window right:70% \
+        --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES |
+        sed 's/^..//' | cut -d' ' -f1)
+
+    if [[ $result != "" ]]; then
+        if [[ $result == remotes/* ]]; then
+            git checkout --track $(echo $result | sed 's#remotes/##')
+        else
+            git checkout "$result"
+        fi
+    fi
+}
+
+function gcf() {
+  # Add files if passed as arguments
+  [[ $# -ne 0 ]] && git checkout "$@" && git status -su && return
+
+  local changed
+  changed=$(git config --get-color color.status.changed red)
+
+  git -c color.status=always status -s -uno | grep -F -e "${changed}" |
+    fzf --multi --bind ctrl-a:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
+      --preview 'git diff --color=always {2}' | awk '{print $2}' | xargs git checkout
+}
