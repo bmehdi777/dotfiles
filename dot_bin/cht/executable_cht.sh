@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-selected=$(cat ~/.bin/cht/cht.lang ~/.bin/cht/cht.cmd | fzf)
+selected=$(cat ~/.bin/cht/cht.lang ~/.bin/cht/cht.cmd | fzf --preview '')
 
 read -p "Search: " query
 
