@@ -3,13 +3,12 @@ function ga() {
   [[ $# -ne 0 ]] && git add "$@" && git status -su && return
 
   local changed unmerged untracked
-  changed=$(git config --get-color color.status.changed red)
-  unmerged=$(git config --get-color color.status.unmerged red)
+  changed=$(git config --get-color color.status.changed red) unmerged=$(git config --get-color color.status.unmerged red)
   untracked=$(git config --get-color color.status.untracked red)
 
   git -c color.status=always status -su | grep -F -e "${untracked}" -e "${changed}" -e "${unmerged}" |
     sed -E 's/^(..[^[:space:]]*)[[:space:]]+(.*)$/\1  \2/' |
-    fzf --multi --bind ctrl-a:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
+    fzf --multi --bind ctrl-space:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
       --preview 'git diff --color=always {2}' | awk '{print $2}' | xargs git add
 }
 function gbf() {
@@ -37,4 +36,26 @@ function gcf() {
   git -c color.status=always status -s -uno | grep -F -e "${changed}" |
     fzf --multi --bind ctrl-a:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
       --preview 'git diff --color=always {2}' | awk '{print $2}' | xargs git checkout
+}
+
+# visualize commit
+function gcv() {
+	local g=(
+		git log
+		--graph
+		--format='%C(auto)%h%d %s %C(white)%C(bold)%cr'
+		--color=always
+		"$@"
+	)
+
+	local fzf=(
+		fzf
+		--ansi
+		--reverse
+		--tiebreak=index
+		--no-sort
+		--bind=ctrl-s:toggle-sort
+		--preview 'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1; }; f {}'
+	)
+	$g | $fzf | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I {} sh -c 'git show --color=always {} | less -R'
 }
