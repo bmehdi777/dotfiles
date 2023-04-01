@@ -46,6 +46,12 @@ Rust format | <leader>rfmt
 
 ## LSP
 See lsp info | <space>e
+Go to declaration | <leader>gD
+Go to definition | <leader>gd
+Go to implementation | <leader>gi
+Go to references | <leader>gr
+Rename | <space>rn
+Code action | <space>ca
 
 ## Other
 Navigate to left pane | <C-h>

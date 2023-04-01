@@ -4,13 +4,15 @@ if not status then
 end
 
 local servers = {
-	"clangd"
+	"clangd",
+	"rust_analyzer"
 }
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
 		on_attach = on_attach,
 	}, _config or {})
 end
+
 
 -- Mason.nvim config
 require("mason").setup()
@@ -24,29 +26,20 @@ require("mason-lspconfig").setup_handlers({
 	end
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+	callback = function(ev)
+		-- Enable completion triggered by <c-x><c-o>
+		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-
--- Disable inline lsp and put it into a box
---vim.diagnostic.config({
---	virtual_text = false
---})
---vim.o.updatetime = 100
---vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
---
---local border = {
---      {"┌", "FloatBorder"},
---      {"─", "FloatBorder"},
---      {"┐", "FloatBorder"},
---      {"│", "FloatBorder"},
---      {"┘", "FloatBorder"},
---      {"─", "FloatBorder"},
---      {"└", "FloatBorder"},
---      {"│", "FloatBorder"},
---}
---
---local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
---function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
---  opts = opts or {}
---  opts.border = opts.border or border
---  return orig_util_open_floating_preview(contents, syntax, opts, ...)
---end
+		-- Buffer local mappings.
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		local opts = { buffer = ev.buf }
+		vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, opts)
+		vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
+		vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
+		vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
+		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+		vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+	end,
+})
