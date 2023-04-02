@@ -24,7 +24,6 @@ return require('packer').startup(function()
 
 	-- Tree
 	use "nvim-tree/nvim-tree.lua"
-	use "nvim-treesitter/nvim-treesitter-context"
 
 	-- Color syntax
 	use {
