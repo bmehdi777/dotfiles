@@ -22,7 +22,6 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -744,7 +743,8 @@ font:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
+  - { key: "R", mods: Control|Shift, action: ResetFontSize }
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -1061,4 +1061,3 @@ schemes:
 
 
 colors: *argonaut
-
