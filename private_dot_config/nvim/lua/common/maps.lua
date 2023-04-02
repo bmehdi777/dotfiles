@@ -51,3 +51,6 @@ nnoremap("<F1>", "", { silent=true })
 
 -- Rust
 nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>",  { silent=true })
+
+-- Undotree
+nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })

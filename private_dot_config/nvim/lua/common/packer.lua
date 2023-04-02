@@ -5,8 +5,7 @@ return require('packer').startup(function()
 
 	-- LSP File config
 	use({
-		"neovim/nvim-lspconfig",
-		requires = {
+		"neovim/nvim-lspconfig", requires = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		}})
@@ -69,6 +68,7 @@ return require('packer').startup(function()
 		config = function() require("nvim-autopairs").setup {} end
 	}
 	use "windwp/nvim-ts-autotag"
+	use "mbbill/undotree"
 
 	use "lewis6991/impatient.nvim"
 
