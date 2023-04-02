@@ -1,5 +1,8 @@
 # Personnal cheatsheet for vim
 
+## Vim
+Equalize pane | <C-w>=
+
 ## Telescope
 Find files | <C-p>
 Live grep | <C-f>
@@ -52,6 +55,9 @@ Go to implementation | <leader>gi
 Go to references | <leader>gr
 Rename | <space>rn
 Code action | <space>ca
+
+## UndoTree
+Toggle UndoTree | <leader>ut
 
 ## Other
 Navigate to left pane | <C-h>
