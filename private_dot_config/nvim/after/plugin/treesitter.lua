@@ -4,7 +4,7 @@ if not status then
 end
 
 treesitter.setup {
-  ensure_installed = { "lua", "rust", "toml" },
+  ensure_installed = { "lua", "rust", "toml", "query", "javascript", "typescript", "c" },
   auto_install = true,
   highlight = {
     enable = true,
