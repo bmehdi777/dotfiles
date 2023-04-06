@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """$username@$hostname $status$character"""
+format = """$python$username@$hostname $status$character"""
 right_format = """
 $cmd_duration\
 $directory\
@@ -70,3 +70,8 @@ style = "bright-black"
 
 [git_metrics]
 disabled = false
+
+[python]
+format = '[(\($virtualenv\) )]($style)'
+style = "#ff3399"
+detect_folders = ['venv/', 'env/']
