@@ -10,11 +10,11 @@ super + @space
 
 ## Chrome
 super + {_, shift +} g
-	google-chrome {_,--incognito}
+	google-chrome {--enable-features=WebUIDarkMode --force-dark-mode,--incognito}
 ## Chrome floating
 super + alt + g
 	bspc rule -a '*' -o state=floating rectangle=1175x960+0+0 center=true && \
-	google-chrome
+	google-chrome --enable-features=WebUIDarkMode --force-dark-mode
 ## Quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
