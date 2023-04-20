@@ -3,6 +3,22 @@
 ## Vim
 Equalize pane | <C-w>=
 
+Go to link (URL or path) | gf
+Go to URL through browser | gx
+
+Toggle fold | za
+Toggle fold recursive | zA
+Close current fold | zc
+Close fold recursive | zC
+Open current fold | zo
+Open fold recursive | zO
+
+Select inner tag | vit
+Select around tag | vat
+Select inner paragraph | vip
+Select around paragraph | vap
+
+
 ## Telescope
 Find files | <C-p>
 Live grep | <C-f>
