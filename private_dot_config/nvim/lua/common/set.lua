@@ -17,3 +17,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.binary = true
 vim.opt.eol = false
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
