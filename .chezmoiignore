@@ -2,7 +2,6 @@ readme.md
 .config/nvim/plugin/**
 {{ if eq .chezmoi.os "darwin"  }}
 Images/Wallpaper
-.config/alacritty
 .config/bspwm
 .config/rofi
 .config/sxhkd
@@ -12,5 +11,6 @@ Images/Wallpaper
 .local/share/fonts
 .fehbg
 {{ end }}
+.config/alacritty
 Images/**
 .local/share/fonts/**
