@@ -118,14 +118,13 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-	#{{ if eq .chezmoi.os "darwin" }}
-    #family: "Monaco"
-	#{{ else }}
-    #family: "Monaco Nerd Font Mono"
-	#{{ end }}
     family: "Monaco Nerd Font Mono"
     # The `style` can be specified to pick a specific face.
+	{{ if eq .chezmoi.os "darwin" }}
+	style: Book
+	{{ else }}
     style: Regular
+	{{ end }}
 
   # Bold font face
   bold:
@@ -133,7 +132,12 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
+	{{ if eq .chezmoi.os "darwin" }}
+    family: "Monaco"
+	{{ else }}
     family: "Monaco Nerd Font Mono"
+	{{ end }}
+
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -144,7 +148,11 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
+	{{ if eq .chezmoi.os "darwin" }}
+    family: "Monaco"
+	{{ else }}
     family: "Monaco Nerd Font Mono"
+	{{ end }}
 
     # The `style` can be specified to pick a specific face.
     style: Italic
