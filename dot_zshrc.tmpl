@@ -26,9 +26,9 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin
 {{ end }}
 
 # FZF
-FZF_DEFAULT_COMMAND='find -L'
-FZF_COMPLETION_TRIGGER='**' # can change ** to whatever you like
-FZF_DEFAULT_OPTS='--preview "batcat  --style=numbers --color=always --line-range :500 {}" -m --height 50% --border'
+export FZF_DEFAULT_COMMAND='find -L'
+export FZF_COMPLETION_TRIGGER='**' # can change ** to whatever you like
+export FZF_DEFAULT_OPTS='--preview "batcat  --style=numbers --color=always --line-range :500 {}" -m --height 50% --border'
 
 {{ if eq .chezmoi.os "linux" }}
 # Logisim
