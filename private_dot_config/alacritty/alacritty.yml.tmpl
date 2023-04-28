@@ -120,11 +120,7 @@ font:
     #   - (Windows) Consolas
     family: "Monaco Nerd Font Mono"
     # The `style` can be specified to pick a specific face.
-	{{ if eq .chezmoi.os "darwin" }}
-    style: Book
-	{{ else }}
-    style: Regular
-	{{ end }}
+	{{ if eq .chezmoi.os "darwin" }}style: Book{{ else }}style: Regular{{ end }}
   # Bold font face
   bold:
     # Font family
