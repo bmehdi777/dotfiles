@@ -3,11 +3,7 @@ export EDITOR="nvim"
 
 source ~/.zsh_color_syntax
 
-plugins=(z sudo colored-man-pages zsh-autosuggestions fzf zsh-syntax-highlighting)
-
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  tmux attach || tmux
-fi
+plugins=(z tmux sudo colored-man-pages zsh-autosuggestions fzf zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
