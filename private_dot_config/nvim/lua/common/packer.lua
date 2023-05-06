@@ -41,6 +41,7 @@ return require('packer').startup(function()
 	use "hrsh7th/cmp-path" -- Path completions
 	use "hrsh7th/cmp-buffer" -- buffer completions
 	use "hrsh7th/cmp-nvim-lsp" 
+	use "hrsh7th/cmp-nvim-lsp-signature-help" 
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- Git sugar
