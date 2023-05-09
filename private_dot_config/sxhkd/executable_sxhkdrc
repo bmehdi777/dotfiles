@@ -42,8 +42,8 @@ super + {_,shift +}{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 ## Focus or send to the given desktop
-super + {shift ,alt +}{1-9,0} 
-	bspc {desktop -f,node -d} '^{1-9, 10}' --follow
+super + {_, shift +}{ampersand, eacute, quotedbl, apostrophe, egrave, underscore, ccedilla, agrave} 
+	bspc {desktop -f,node -d} '{1,2,3,4,7,8,9,0}' --follow
 
 ## Switch desktop
 super + alt + {h,l}
