@@ -63,6 +63,15 @@ return require('packer').startup(function()
 		}
 	}
 
+
+	-- Shortcut 
+	use {
+		'ThePrimeagen/harpoon',
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+		}
+	}
+
 	-- Other
 	use {
 		"windwp/nvim-autopairs",

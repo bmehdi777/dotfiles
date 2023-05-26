@@ -75,6 +75,9 @@ Code action | <space>ca
 ## UndoTree
 Toggle UndoTree | <leader>ut
 
+## Harpoon
+
+
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>

@@ -54,3 +54,16 @@ nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>",  { silent=tru
 
 -- Undotree
 nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })
+
+
+-- Harpoon
+nnoremap("<leader>h<Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
+nnoremap("<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { silent=true })
+
+nnoremap("<leader>h&", ":lua require('ui').nav_file(1)<CR>", { silent=true })
+nnoremap("<leader>hé", ":lua require('ui').nav_file(2)<CR>", { silent=true })
+nnoremap("<leader>h\"", ":lua require('ui').nav_file(3)<CR>", { silent=true })
+nnoremap("<leader>h\'", ":lua require('ui').nav_file(4)<CR>", { silent=true })
+
+nnoremap("<leader>hn", ":lua require('ui').nav_next()<CR>", { silent=true })
+nnoremap("<leader>hp", ":lua require('ui').nav_prev()<CR>", { silent=true })
