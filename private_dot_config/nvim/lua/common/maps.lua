@@ -57,7 +57,7 @@ nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })
 
 
 -- Harpoon
-nnoremap("<leader><Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
+nnoremap("<leader>h<Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
 nnoremap("<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { silent=true })
 
 nnoremap("<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
