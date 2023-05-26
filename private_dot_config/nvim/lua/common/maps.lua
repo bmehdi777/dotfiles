@@ -57,13 +57,13 @@ nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })
 
 
 -- Harpoon
-nnoremap("<leader>h<Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
+nnoremap("<leader><Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
 nnoremap("<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { silent=true })
 
-nnoremap("<leader>h&", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
-nnoremap("<leader>hé", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
-nnoremap("<leader>h\"", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
-nnoremap("<leader>h\'", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
+nnoremap("<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
+nnoremap("<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
+nnoremap("<leader>\"", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
+nnoremap("<leader>\'", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
 
 nnoremap("<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", { silent=true })
 nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=true })
