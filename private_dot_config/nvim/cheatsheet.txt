@@ -76,6 +76,12 @@ Code action | <space>ca
 Toggle UndoTree | <leader>ut
 
 ## Harpoon
+Harpoon toggle ui | <leader>h<Tab>
+Harpoon add | <leader>ha
+Harpoon go to 1 | <leader>h&
+Harpoon go to 2 | <leader>hé
+Harpoon go to 3 | <leader>h"
+Harpoon go to 4 | <leader>h'
 
 
 ## Other
