@@ -44,9 +44,6 @@ return require('packer').startup(function()
 	use "hrsh7th/cmp-nvim-lsp-signature-help" 
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-	-- Git sugar
-	use "lewis6991/gitsigns.nvim"
-
 	-- Status line
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -78,7 +75,10 @@ return require('packer').startup(function()
 		config = function() require("nvim-autopairs").setup {} end
 	}
 	use "windwp/nvim-ts-autotag"
-	use "mbbill/undotree"
+	use {
+		'stevearc/aerial.nvim',
+		config = function() require('aerial').setup() end
+	}
 
 	use "lewis6991/impatient.nvim"
 
