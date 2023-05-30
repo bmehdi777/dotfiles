@@ -69,6 +69,6 @@ nnoremap("<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", { silent=tru
 nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=true })
 
 -- Aerial
-nnoremap("<leader>a<Tab>", ":AerialToggle<CR>", { silent=true })
+nnoremap("<leader>a<Tab>", ":AerialToggle!<CR>", { silent=true })
 nnoremap("<leader>an", ":AerialNext<CR>", { silent=true })
 nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
