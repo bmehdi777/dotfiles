@@ -71,6 +71,7 @@ Go to implementation | <leader>gi
 Go to references | <leader>gr
 Rename | <space>rn
 Code action | <space>ca
+See signature on hover | <leader>lsph
 
 ## UndoTree
 Toggle UndoTree | <leader>ut

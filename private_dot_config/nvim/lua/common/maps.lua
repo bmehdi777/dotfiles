@@ -72,3 +72,6 @@ nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=tru
 nnoremap("<leader>a<Tab>", ":AerialToggle!<CR>", { silent=true })
 nnoremap("<leader>an", ":AerialNext<CR>", { silent=true })
 nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
+
+-- Lsp
+nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
