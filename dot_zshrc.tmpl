@@ -16,7 +16,7 @@ bindkey "^[c" fzf-cd-widget
 
 # Export section
 {{ if eq .chezmoi.os "darwin" }}
-export GOPATH=/usr/local/go
+export GOPATH=/usr/local/go:/~/Workspace/go/
 export PATH=/usr/local/opt/python@3.7/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin:$PATH
