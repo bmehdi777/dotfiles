@@ -7,12 +7,6 @@ local servers = {
 	"clangd",
 	"rust_analyzer"
 }
-local servers_config = {
-	clangd = {},
-	rust_analyzer = {
-		root_dir = lspconfig.util.root_pattern('Cargo.toml'),
-	}
-}
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
 		on_attach = on_attach,
@@ -28,9 +22,11 @@ require("mason-lspconfig").setup({
 })
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
-		nvim_lsp[server_name].setup(config(servers_config[server_name]))
+		nvim_lsp[server_name].setup(config())
 	end
 })
+
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
