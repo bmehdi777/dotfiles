@@ -7,8 +7,7 @@ function ga() {
   untracked=$(git config --get-color color.status.untracked red)
 
   git -c color.status=always status -su | grep -F -e "${untracked}" -e "${changed}" -e "${unmerged}" |
-    sed -E 's/^(..[^[:space:]]*)[[:space:]]+(.*)$/\1  \2/' |
-    fzf --multi --bind ctrl-space:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
+    sed -E 's/^(..[^[:space:]]*)[[:space:]]+(.*)$/\1  \2/' | fzf --multi --bind ctrl-space:select-all --reverse --height 70% --border --ansi --tac --preview-window right:70% --exit-0 \
       --preview 'git diff --color=always {2}' | awk '{print $2}' | xargs git add
 }
 function gbf() {
@@ -58,4 +57,14 @@ function gcv() {
 		--preview 'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1; }; f {}'
 	)
 	$g | $fzf | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I {} sh -c 'git show --color=always {} | less -R'
+}
+
+# visualize Virtual Memory Resident Stack Size (vmrss)
+function vmrss() {
+	while true
+	do
+		sync
+		cat /proc/$1/status | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox} VmRSS | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox} -o '[0-9]\+' | awk '{print $1/1024 " MB"}'
+		sleep 1
+	done
 }
