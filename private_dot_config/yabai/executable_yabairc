@@ -24,13 +24,11 @@ function setup_space {
 }
 
 setup_space 1 music
-setup_space 2 discord
+setup_space 2 term
 setup_space 3 other1
 setup_space 4 other2
 setup_space 5 term
 setup_space 6 web
 setup_space 7 other3
-setup_space 8 other4
 
-yabai -m rule --add app=Alacritty space=^5
-yabai -m rule --add app="Google Chrome" space=^6
+yabai -m rule --add app="Google Chrome" space=^5
