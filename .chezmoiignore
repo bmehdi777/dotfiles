@@ -12,5 +12,9 @@ Images/Wallpaper
 .local/share/fonts
 .fehbg
 {{ end }}
+{{ if ne .chezmoi.os "darwin" }}
+.config/skhd
+.config/yabai
+{{ end }}
 Images/**
 .local/share/fonts/**
