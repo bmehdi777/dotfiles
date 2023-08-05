@@ -1,0 +1,25 @@
+# Focus
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+# Move inside of space
+alt + cmd - j : yabai -m window --swap south
+alt + cmd - k : yabai -m window --swap north
+alt + cmd - h : yabai -m window --swap west
+alt + cmd - l : yabai -m window --swap east
+
+# Move between space
+shift + alt + cmd - h : yabai -m window --display west; yabai -m display --focus west; 
+shift + alt + cmd - l : yabai -m window --display east; yabai -m display --focus east; 
+
+# Move to numbered space
+cmd - 0x12 : yabai -m space --focus 1  
+cmd - 0x13 : yabai -m space --focus 2  
+cmd - 0x14 : yabai -m space --focus 3  
+cmd - 0x15 : yabai -m space --focus 4  
+cmd - 0x18 : yabai -m space --focus 7  
+cmd - 0x19 : yabai -m space --focus 8  
+cmd - 0x20 : yabai -m space --focus 9  
+cmd - 0x21 : yabai -m space --focus 0  
