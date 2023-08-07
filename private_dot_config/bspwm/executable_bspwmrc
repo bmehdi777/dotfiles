@@ -4,7 +4,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd -r ~/.sxhkd.log &
 picom &
 #feh --bg-fill ~/Images/Wallpaper/wallpaper.jpg &
-feh --bg-fill ~/Images/Wallpaper/landscape.webp &
+feh --bg-fill ~/Images/Wallpaper/fa.png &
 sh ~/.config/polybar/launch.sh &
 
 # Monitor 
