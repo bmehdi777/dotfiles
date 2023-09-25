@@ -15,7 +15,7 @@ prettier.setup({
 		"yaml"
 	},
 	cli_options = {
-		tab_width = 4,
+		tab_width = 2,
 		use_tabs = true,
 		semi = true,
 		single_quote = false,
