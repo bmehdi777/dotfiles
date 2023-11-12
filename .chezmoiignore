@@ -1,4 +1,6 @@
 readme.md
+.xsessionrc_home
+.xsessionrc_work
 .config/nvim/plugin/
 .config/nvim/plugin/**
 {{ if eq .chezmoi.os "darwin"  }}
