@@ -79,10 +79,10 @@ Toggle UndoTree | <leader>ut
 ## Harpoon
 Harpoon toggle ui | <leader>h<Tab>
 Harpoon add | <leader>ha
-Harpoon go to 1 | <leader>&
-Harpoon go to 2 | <leader>é
-Harpoon go to 3 | <leader>"
-Harpoon go to 4 | <leader>'
+Harpoon go to 1 | <leader>1
+Harpoon go to 2 | <leader>2
+Harpoon go to 3 | <leader>3
+Harpoon go to 4 | <leader>4
 
 ## Aerial
 Aerial toggle | <leader>a<Tab>
