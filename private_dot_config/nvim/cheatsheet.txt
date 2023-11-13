@@ -65,10 +65,10 @@ Rust format | <leader>rfmt
 
 ## LSP
 See lsp info | <space>e
-Go to declaration | <leader>gD
-Go to definition | <leader>gd
-Go to implementation | <leader>gi
-Go to references | <leader>gr
+Go to declaration | gD
+Go to definition | gd
+Go to implementation | gi
+Go to references | gr
 Rename | <space>rn
 Code action | <space>ca
 See signature on hover | <leader>lsph
