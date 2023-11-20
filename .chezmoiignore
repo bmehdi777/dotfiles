@@ -3,7 +3,7 @@ readme.md
 .xsessionrc_work
 .config/nvim/plugin/
 .config/nvim/plugin/**
-{{ if eq .chezmoi.os "darwin"  }}
+{{ if ne .chezmoi.os "darwin"  }}
 Images/Wallpaper
 .config/bspwm
 .config/rofi
@@ -14,7 +14,7 @@ Images/Wallpaper
 .local/share/fonts
 .fehbg
 {{ end }}
-{{ if ne .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 .config/skhd
 .config/yabai
 {{ end }}
