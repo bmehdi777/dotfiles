@@ -18,5 +18,3 @@ Images/Wallpaper
 .config/skhd
 .config/yabai
 {{ end }}
-Images/**
-.local/share/fonts/**
