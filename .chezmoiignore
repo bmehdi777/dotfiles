@@ -1,4 +1,6 @@
 readme.md
+.bspwm/.bspwmrc_home
+.config/bspwm/.bspwmrc_work
 .xsessionrc_home
 .xsessionrc_work
 .config/nvim/plugin/
