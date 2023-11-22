@@ -50,3 +50,32 @@ bspc rule -a Org.gnome.Nautilus desktop=^7 follow=on
 bspc rule -a Spotify desktop=^1 
 bspc rule -a discord desktop=^2 follow=on
 bspc rule -a TelegramDesktop desktop=^2 follow=on
+
+monitor_remove() {
+  # Add default temp desktop because a minimum of one desktop is required per monitor
+  bspc monitor "$EXTERNAL_MONITOR_1" -a Desktop
+  bspc monitor "$EXTERNAL_MONITOR_2" -a Desktop2
+
+  # Move all desktops except the last default desktop to internal monitor
+  for desktop in $(bspc query -D -m "$EXTERNAL_MONITOR_1");	do
+    bspc desktop "$desktop" --to-monitor "$INTERNAL_MONITOR"
+  done
+  for desktop in $(bspc query -D -m "$EXTERNAL_MONITOR_2");	do
+    bspc desktop "$desktop" --to-monitor "$INTERNAL_MONITOR"
+  done
+
+  bspc desktop Desktop --remove
+  bspc desktop Desktop2 --remove
+
+  bspc monitor "$INTERNAL_MONITOR" -o 1 2 3 4 5 6 7 8 9 10
+}
+
+monitor_add() {
+  for desktop in $(bspc query -D --names -m "$INTERNAL_MONITOR" | sed 5q); do
+    bspc desktop "$desktop" --to-monitor "$EXTERNAL_MONITOR_1"
+  done
+
+  bspc desktop Desktop --remove
+
+  bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+}
