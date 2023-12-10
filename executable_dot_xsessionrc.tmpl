@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.hostname "bmehdi-desktop" }}
-{{ include ".xsessionrc_home"}}
+{{ include ".xsessionrc_home" }}
 {{ else if eq .chezmoi.hostname "work-laptop"}}
-
+{{ include ".xsessionrc_work" }}
 {{ end }}
