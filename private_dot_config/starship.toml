@@ -49,15 +49,15 @@ format = '[\[$time\]](purple)'
 time_format = "%R"
 
 [git_branch]
-symbol = " "
-format = "[$symbol$branch]($style) "
+symbol = "\uf1d2"
+format = "[$symbol $branch]($style) "
 style = "#ff3399"
 only_attached = false
 
 [git_commit]
 disabled = false
 commit_hash_length = 4
-format = "[ #$hash$tag](bright-black)"
+format = "[\ueafc #$hash$tag](bright-black)"
 only_detached = true
 
 [git_status]
