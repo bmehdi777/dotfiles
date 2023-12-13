@@ -5,6 +5,9 @@
     - using _oh-my-zsh_
 - editor : _neovim_
 - terminal manager : _tmux_
+- tools :
+    - lazygit
+    - git-delta (see side by side)
 
 ## Linux
 
