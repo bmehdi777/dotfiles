@@ -1,0 +1,12 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/mehdi/Workspace/work/da-front-cms
+- /home/mehdi/.local/share/chezmoi
+- /home/mehdi/Workspace/work/da-ged-web
+- /home/mehdi/Workspace/perso/lg-test
+startuppopupversion: 5
+customcommandshistory:
+- qa
+- q
+hidecommandlog: false
+ignorewhitespaceindiffview: false
