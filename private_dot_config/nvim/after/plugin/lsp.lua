@@ -5,7 +5,11 @@ end
 
 local servers = {
 	"clangd",
-	"rust_analyzer"
+	"rust_analyzer",
+	"typescript-language-server",
+	"prettier",
+	"quick-lint-js"
+	--"eslint-lsp"
 }
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
