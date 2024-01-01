@@ -81,7 +81,4 @@ return require('packer').startup(function()
 	}
 
 	use "lewis6991/impatient.nvim"
-
-	use "/home/bmehdi/Workspace/labs/nvim/spm.nvim"
-
 end)
