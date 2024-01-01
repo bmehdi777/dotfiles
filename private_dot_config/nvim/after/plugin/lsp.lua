@@ -7,8 +7,8 @@ local servers = {
 	"clangd",
 	"rust_analyzer",
 	"tsserver",
-	"prettier",
 	"quick_lint_js"
+	--"prettier",
 	--"eslint"
 }
 local function config(_config)
