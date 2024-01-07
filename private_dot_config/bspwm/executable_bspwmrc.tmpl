@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.hostname "bmehdi-desktop" }}
 {{ include "private_dot_config/bspwm/.bspwmrc_home"}}
-{{ else if eq .chezmoi.hostname "work-laptop" }}
+{{ else if eq .chezmoi.hostname "bmehdi-work-pc" }}
 {{ include "private_dot_config/bspwm/.bspwmrc_work"}}
 {{ end }}
