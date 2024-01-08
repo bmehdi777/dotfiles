@@ -64,6 +64,10 @@ nnoremap("<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=tru
 nnoremap("<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
 nnoremap("<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
 nnoremap("<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
+nnoremap("<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
+nnoremap("<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
+nnoremap("<leader>\"", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
+nnoremap("<leader>\'", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
 
 nnoremap("<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", { silent=true })
 nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=true })
@@ -75,3 +79,5 @@ nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
 
 -- Lsp
 nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
+nnoremap("<leader>gep", ":lua vim.diagnostic.goto_prev()<CR>", { silent=true })
+nnoremap("<leader>gen", ":lua vim.diagnostic.goto_next()<CR>", { silent=true })
