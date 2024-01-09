@@ -79,5 +79,5 @@ nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
 
 -- Lsp
 nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
-nnoremap("<leader>gep", ":lua vim.diagnostic.goto_prev()<CR>", { silent=true })
-nnoremap("<leader>gen", ":lua vim.diagnostic.goto_next()<CR>", { silent=true })
+nnoremap("<leader>gdp", ":lua vim.diagnostic.goto_prev()<CR>", { silent=true })
+nnoremap("<leader>gdn", ":lua vim.diagnostic.goto_next()<CR>", { silent=true })
