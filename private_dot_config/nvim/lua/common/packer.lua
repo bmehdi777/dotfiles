@@ -18,7 +18,7 @@ return require('packer').startup(function()
 
 	-- Telescope
 	use { 
-		"nvim-telescope/telescope.nvim", tag = '0.1.0', 
+		"nvim-telescope/telescope.nvim", tag = '0.1.3',
 		requires = { {"nvim-lua/plenary.nvim"} } -- required by nvim-telescope
 	}
 
@@ -69,7 +69,18 @@ return require('packer').startup(function()
 		}
 	}
 
+	-- Git
+	use {
+		'lewis6991/gitsigns.nvim'
+	}
+
 	-- Other
+	use {
+		'utilyre/barbecue.nvim',
+		requires = {
+			'SmiteshP/nvim-navic'
+		}
+	}
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end

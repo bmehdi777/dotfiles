@@ -81,3 +81,6 @@ nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
 nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
 nnoremap("<leader>gdp", ":lua vim.diagnostic.goto_prev()<CR>", { silent=true })
 nnoremap("<leader>gdn", ":lua vim.diagnostic.goto_next()<CR>", { silent=true })
+
+-- Gitsign
+nnoremap("<leader>bcl", ":Gitsigns toggle_current_line_blame<CR>", { silent=true})
