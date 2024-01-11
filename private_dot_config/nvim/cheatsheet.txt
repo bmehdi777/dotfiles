@@ -18,7 +18,6 @@ Select around tag | vat
 Select inner paragraph | vip
 Select around paragraph | vap
 
-
 ## Telescope
 Find files | <C-p>
 Live grep | <C-f>
@@ -88,6 +87,9 @@ Harpoon go to 4 | <leader>4
 Aerial toggle | <leader>a<Tab>
 Aerial prev | <leader>ap
 Aerial next | <leader>an
+
+## Gitsigns
+Toggle current line blame | <leader>bcl
 
 ## Other
 Navigate to left pane | <C-h>

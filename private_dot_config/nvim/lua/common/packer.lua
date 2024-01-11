@@ -76,12 +76,6 @@ return require('packer').startup(function()
 
 	-- Other
 	use {
-		'utilyre/barbecue.nvim',
-		requires = {
-			'SmiteshP/nvim-navic'
-		}
-	}
-	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
