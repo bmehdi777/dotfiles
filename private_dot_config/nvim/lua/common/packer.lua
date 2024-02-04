@@ -18,7 +18,7 @@ return require('packer').startup(function()
 
 	-- Telescope
 	use { 
-		"nvim-telescope/telescope.nvim", tag = '0.1.0', 
+		"nvim-telescope/telescope.nvim", tag = '0.1.3',
 		requires = { {"nvim-lua/plenary.nvim"} } -- required by nvim-telescope
 	}
 
@@ -67,6 +67,11 @@ return require('packer').startup(function()
 		requires = {
 			{'nvim-lua/plenary.nvim'},
 		}
+	}
+
+	-- Git
+	use {
+		'lewis6991/gitsigns.nvim'
 	}
 
 	-- Other
