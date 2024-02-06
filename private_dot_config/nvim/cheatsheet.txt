@@ -1,7 +1,9 @@
 # Personnal cheatsheet for vim
 
+
 ## Vim
 Equalize pane | <C-w>=
+Leader | <Space>
 
 Go to link (URL or path) | gf
 Go to URL through browser | gx
