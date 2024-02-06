@@ -7,7 +7,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
-		local nnoremap = require("core/keymap").nnoremap
+
 
 		telescope.setup({
 			defaults = {
@@ -25,5 +25,13 @@ return {
 				}
 			}
 		})
+
+		local telescope_builtin = require("telescope.builtin")
+		local vnoremap = require("core/keymap").vnoremap
+		local func = require("core/functions")
+		vnoremap("<C-f>", function()
+			local text = func.getVisualSelection()
+			telescope_builtin.live_grep({ default_text = text })
+		end, { silent=true })
 	end
 }
