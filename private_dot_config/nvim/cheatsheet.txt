@@ -3,7 +3,7 @@
 
 ## Vim
 Equalize pane | <C-w>=
-Leader | <Space>
+Leader | <space>
 
 Go to link (URL or path) | gf
 Go to URL through browser | gx
@@ -65,13 +65,13 @@ Past from register X (0-9)| "Xp
 Rust format | <leader>rfmt
 
 ## LSP
-See lsp info | <space>e
+See lsp info | <leader>e
 Go to declaration | gD
 Go to definition | gd
 Go to implementation | gi
 Go to references | gr
-Rename | <space>rn
-Code action | <space>ca
+Rename | <leader>rn
+Code action | <leader>ca
 See signature on hover | <leader>lsph
 
 ## UndoTree
