@@ -26,6 +26,7 @@ Live grep | <C-f>
 See buffers | <leader>fb
 Git branches | <leader>gb
 Git commits | <leader>gc
+Telescope resume | <leader>tr
 
 ## Telescope-inside
 Move up | <C-k>
