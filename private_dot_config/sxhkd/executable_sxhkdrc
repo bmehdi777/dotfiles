@@ -68,3 +68,7 @@ super + alt + shift + {Left,Down,Up,Right}
 ## Lock screen
 super + ctrl + l
 	betterlockscreen -l
+
+## Screenshot - require flameshot
+super + shift + s
+	flameshot gui
