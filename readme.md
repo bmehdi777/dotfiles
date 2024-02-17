@@ -7,13 +7,14 @@
 - terminal manager : _tmux_
 - tools :
     - lazygit
-    - git-delta (see side by side)
+    - git-delta (see/gitdiff side by side)
 
 ## Linux
 
-- window manager : _bspwm_ & _sxhkd_
-- terminal : _alacritty_
+- window manager : _bspwm_ and _sxhkd_
+- terminal : _alacritty_ or _kitty_
+- screenshot: _flameshot_
 
 ## Macos
 
-- terminal : _alacritty_ 
+- terminal : _alacritty_ or _kitty_
