@@ -8,6 +8,7 @@
 - tools :
     - lazygit
     - git-delta (see/gitdiff side by side)
+    - exa to replace ls
 
 ## Linux
 
