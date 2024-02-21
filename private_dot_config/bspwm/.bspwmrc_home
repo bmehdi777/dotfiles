@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 ## Autostart
 pgrep -x sxhkd > /dev/null || sxhkd -r ~/.sxhkd.log &
@@ -31,5 +31,3 @@ bspc rule -a Org.gnome.Nautilus desktop=^7 follow=on
 bspc rule -a Spotify desktop=^1 
 bspc rule -a discord desktop=^2 follow=on
 bspc rule -a TelegramDesktop desktop=^2 follow=on
-
-
