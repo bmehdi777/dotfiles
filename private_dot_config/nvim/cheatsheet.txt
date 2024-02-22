@@ -20,6 +20,12 @@ Select around tag | vat
 Select inner paragraph | vip
 Select around paragraph | vap
 
+Increment a number | <C-a>
+Decrement a number | <C-x>
+
+Next occurrence | *
+Previous occurrence | #
+
 ## Telescope
 Find files | <C-p>
 Live grep | <C-f>
