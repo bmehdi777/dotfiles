@@ -15,8 +15,8 @@ bspc monitor -d 7 8 9 0
 bspc config border_width		1
 bspc config window_gap			0
 bspc config active_border_color '#a470a4'
-bspc config normal_border_color '#868fb0'
-bspc config focused_border_color '#86aefd'
+bspc config normal_border_color '#86aefd'
+bspc config focused_border_color '#ffca6d'
 bspc config split_ratio			0.5
 
 # BSPWM rules
