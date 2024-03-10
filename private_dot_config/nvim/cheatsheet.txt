@@ -100,6 +100,16 @@ Aerial next | <leader>an
 ## Gitsigns
 Toggle current line blame | <leader>bcl
 
+## Oil
+Go back | -
+Open current working directory | _
+Show help | g?
+Preview file | <C-p>
+Close file | <C-c>
+Refresh | <C-l>
+Vertical split | <C-s>
+Horizontal split | <C-t>
+
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>

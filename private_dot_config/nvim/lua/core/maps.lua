@@ -92,3 +92,7 @@ nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>gb", "<cmd>Telescope git_branches<CR>")
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
 nnoremap("<leader>tr", "<cmd> Telescope resume<CR>")
+
+
+-- Oil
+nnoremap("<leader>o", ":Oil<CR>", { silent = true })
