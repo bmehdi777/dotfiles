@@ -107,6 +107,8 @@
      flameshot
      spotify
      rustup
+     lazygit
+     delta
     ];
   };
 
