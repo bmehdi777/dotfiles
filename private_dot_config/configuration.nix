@@ -106,6 +106,7 @@
      bat
      flameshot
      spotify
+     rustup
     ];
   };
 
