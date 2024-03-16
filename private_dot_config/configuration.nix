@@ -24,6 +24,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.nameservers = ["8.8.8.8" "1.1.1.1"];
+  networking.networkmanager.dns = "none";
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -42,6 +44,10 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
+
+  # Sound
+  hardware.pulseaudio.enable = true;
+  nixpkgs.config.pulseaudio = true;
 
   # Nvidia driver
   hardware.opengl = {
@@ -76,7 +82,6 @@
       };
       sessionCommands = "xset r rate 400 50";
       defaultSession = "none+bspwm";
-      xpra.pulseaudio = true;
     };
   };
 
@@ -114,6 +119,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
