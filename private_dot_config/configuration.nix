@@ -94,27 +94,29 @@
     description = "bmehdi";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [ 
-     chezmoi
-     neovim
-     discord
-     fzf
-     tmux
-     telegram-desktop
-     python3 
-     eza
-     atuin
-     starship
-     firefox
-     fnm
-     rofi
-     bat
-     flameshot
-     spotify
-     rustup
-     lazygit
-     delta
-    ];
+		packages = let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+		in with pkgs; [ 
+			chezmoi
+			neovim
+			discord
+			fzf
+			tmux
+			telegram-desktop
+			python3 
+			eza
+			atuin
+			starship
+			firefox
+			nodejs_20
+			rofi
+			bat
+			flameshot
+			spotify
+			rustup
+			lazygit
+			delta
+			unstable.obsidian
+			];
   };
 
   # Allow unfree packages
@@ -173,6 +175,12 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  nix.settings.experimental-features = "nix-command flakes";
 
-
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    dates = "21:00:00";
+    options = "--delete-older-than 7d";
+  };
 }
