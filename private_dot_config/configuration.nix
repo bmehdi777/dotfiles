@@ -115,6 +115,8 @@
 			rustup
 			lazygit
 			delta
+			bcc
+
 			unstable.obsidian
 			];
   };
@@ -129,7 +131,6 @@
   #  wget
     vim 
     neovim
-    nerdfonts
     kitty
     ripgrep
     git

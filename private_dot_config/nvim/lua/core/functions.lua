@@ -13,4 +13,18 @@ function M.getVisualSelection()
 	end
 end
 
+function M.format()
+	local fmt_table = {
+		["rust"] = function()
+			vim.cmd("%! rustfmt")
+		end
+	}
+	local func = fmt_table[vim.bo.filetype]
+	if (func) then
+		func()
+	else
+		vim.cmd("Prettier")
+	end
+end
+
 return M

@@ -19,8 +19,8 @@ nnoremap("<leader>y", '"+y')
 nnoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
 inoremap("<C-b>", "<ESC>:NvimTreeToggle<CR>", { silent=true })
 
--- Prettier
-nnoremap("<leader>fp", ":Prettier<CR>", { silent=true })
+-- Formatting
+nnoremap("<leader>fp", "<cmd>:lua require('core.functions').format()<CR>", { silent=true })
 
 -- Cheatsheet
 nnoremap("<leader>?", ":Cheatsheet<CR>", { silent=true })
@@ -50,7 +50,7 @@ vnoremap("<F1>", "", { silent=true })
 nnoremap("<F1>", "", { silent=true }) 
 
 -- Rust
-nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>",  { silent=true })
+--nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>",  { silent=true })
 
 -- Undotree
 nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })
