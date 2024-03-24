@@ -26,7 +26,9 @@ return {
 			}, _config or {})
 		end
 
-		require("mason").setup()
+		require("mason").setup({
+			PATH = "append" -- mason binary are added at the end of the path, ensuring that mason take the system lsp first if it encounters it
+		})
 		require("mason-lspconfig").setup({
 			ensure_installed = servers,
 		})

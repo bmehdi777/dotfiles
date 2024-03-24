@@ -113,6 +113,7 @@
 			flameshot
 			spotify
 			rustup
+			go
 			lazygit
 			delta
 			bcc
