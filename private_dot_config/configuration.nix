@@ -143,7 +143,11 @@
     google-chrome
     pavucontrol
     picom
+		openssl
   ];
+	environment.variables = {
+		PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
+	};
 
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
