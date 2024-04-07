@@ -92,7 +92,7 @@
   users.users.bmehdi = {
     isNormalUser = true;
     description = "bmehdi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
 		packages = let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 		in with pkgs; [ 
@@ -125,6 +125,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+	# Docker
+	virtualisation.docker.enable = true;
+	
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -144,6 +147,8 @@
     pavucontrol
     picom
 		openssl
+		htop
+		dig
   ];
 	environment.variables = {
 		PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
