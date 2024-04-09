@@ -21,3 +21,4 @@ Images/Wallpaper
 .config/skhd
 .config/yabai
 {{ end }}
+.config/configuration.nix
