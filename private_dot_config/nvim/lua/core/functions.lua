@@ -16,7 +16,9 @@ end
 function M.format()
 	local fmt_table = {
 		["rust"] = function()
+			local curPos = vim.api.nvim_win_get_cursor(0)
 			vim.cmd("%! rustfmt")
+			vim.api.nvim_win_set_cursor(0, curPos)
 		end
 	}
 	local func = fmt_table[vim.bo.filetype]
