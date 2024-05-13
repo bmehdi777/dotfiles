@@ -117,6 +117,7 @@
 			lazygit
 			delta
 			bcc
+			config.boot.kernelPackages.perf
 
 			unstable.obsidian
 			];
