@@ -26,7 +26,8 @@ exec --no-startup-id nm-applet
 
 ## Theme
 
-client.focused #ffca4d #ffca4d #000000 #a470a4 #a470a4
+client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
+client.unfocused #ffca4d #ffca4d #000000 #a470a4 #a470a4
 
 gaps inner 2
 
@@ -58,21 +59,18 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
-bindsym $mod+$alt+Shift+h move left
-bindsym $mod+$alt+Shift+j move down
-bindsym $mod+$alt+Shift+k move up
-bindsym $mod+$alt+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Switch workspace
+bindsym $mod+$alt+h workspace prev
+bindsym $mod+$alt+l workspace next
 
-bindsym $mod+$alt+Shift+Left move left
-bindsym $mod+$alt+Shift+Down move down
-bindsym $mod+$alt+Shift+Up move up
-bindsym $mod+$alt+Shift+Right move right
+# send 
+bindsym $mod+$alt+shift+h move to workspace prev; workspace prev
+bindsym $mod+$alt+Shift+l move to workspace next; workspace next
 
 # split in horizontal orientation
 #bindsym $mod+o split h
@@ -115,14 +113,14 @@ bindcode $mod+18 workspace number $ws7
 bindcode $mod+19 workspace number $ws8
 
 # move focused container to workspace
-bindcode $mod+Shift+10 move container to workspace number $ws1
-bindcode $mod+Shift+11 move container to workspace number $ws2
-bindcode $mod+Shift+12 move container to workspace number $ws3
-bindcode $mod+Shift+13 move container to workspace number $ws4
-bindcode $mod+Shift+16 move container to workspace number $ws5
-bindcode $mod+Shift+17 move container to workspace number $ws6
-bindcode $mod+Shift+18 move container to workspace number $ws7
-bindcode $mod+Shift+19 move container to workspace number $ws8
+bindcode $mod+Shift+10 move container to workspace number $ws1; workspace number $ws1
+bindcode $mod+Shift+11 move container to workspace number $ws2; workspace number $ws2
+bindcode $mod+Shift+12 move container to workspace number $ws3; workspace number $ws3
+bindcode $mod+Shift+13 move container to workspace number $ws4; workspace number $ws4
+bindcode $mod+Shift+16 move container to workspace number $ws5; workspace number $ws5
+bindcode $mod+Shift+17 move container to workspace number $ws6; workspace number $ws6
+bindcode $mod+Shift+18 move container to workspace number $ws7; workspace number $ws7
+bindcode $mod+Shift+19 move container to workspace number $ws8; workspace number $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
@@ -162,7 +160,13 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	status_command i3status
+	id bar1
+
+	position bottom
+
+	workspace_min_width 10
+	workspace_buttons yes
 }
 
 
