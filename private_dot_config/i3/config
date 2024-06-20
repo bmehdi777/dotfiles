@@ -2,6 +2,8 @@ set $mod Mod4
 set $alt Mod1
 
 font pango:monospace 8
+exec --no-startup-id "sh ~/.fehbg &" 
+exec --no-startup-id "xset r rate 400 50" 
 
 ## Config
 focus_follows_mouse no
@@ -23,13 +25,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-
 ## Theme
 
 client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
 client.unfocused #ffca4d #ffca4d #000000 #a470a4 #a470a4
-
-gaps inner 2
 
 default_border pixel 1
 
@@ -72,6 +71,14 @@ bindsym $mod+$alt+l workspace next
 bindsym $mod+$alt+shift+h move to workspace prev; workspace prev
 bindsym $mod+$alt+Shift+l move to workspace next; workspace next
 
+mode "split" {
+	bindsym $mod+h split horizontal; mode "default"
+	bindsym $mod+v split vertical; mode "default"
+	bindsym $mod+t split toggle; mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+b mode "split"
+
 # split in horizontal orientation
 #bindsym $mod+o split h
 # split in vertical orientation
@@ -91,22 +98,47 @@ bindsym $mod+s floating toggle
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
 
-
 # Workspaces settings
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
+set $ws11 "5"
+
+set $ws12 "6"
 set $ws5 "7"
 set $ws6 "8"
 set $ws7 "9"
 set $ws8 "0"
+
+set $ws9 "music"
+set $ws10 "teams"
+
+workspace $ws1 output DP-1-1
+workspace $ws2 output DP-1-1
+workspace $ws3 output DP-1-1
+workspace $ws4 output DP-1-1
+workspace $ws11 output DP-1-1
+
+workspace $ws12 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
+
 
 # switch to workspace
 bindcode $mod+10 workspace number $ws1
 bindcode $mod+11 workspace number $ws2
 bindcode $mod+12 workspace number $ws3
 bindcode $mod+13 workspace number $ws4
+
+bindcode $mod+14 workspace $ws9
+bindcode $mod+15 workspace $ws10
+
 bindcode $mod+16 workspace number $ws5
 bindcode $mod+17 workspace number $ws6
 bindcode $mod+18 workspace number $ws7
@@ -117,18 +149,29 @@ bindcode $mod+Shift+10 move container to workspace number $ws1; workspace number
 bindcode $mod+Shift+11 move container to workspace number $ws2; workspace number $ws2
 bindcode $mod+Shift+12 move container to workspace number $ws3; workspace number $ws3
 bindcode $mod+Shift+13 move container to workspace number $ws4; workspace number $ws4
+
+bindcode $mod+Shift+14 move container to workspace $ws9; workspace $ws9
+bindcode $mod+Shift+15 move container to workspace $ws10; workspace $ws10
+
 bindcode $mod+Shift+16 move container to workspace number $ws5; workspace number $ws5
 bindcode $mod+Shift+17 move container to workspace number $ws6; workspace number $ws6
 bindcode $mod+Shift+18 move container to workspace number $ws7; workspace number $ws7
 bindcode $mod+Shift+19 move container to workspace number $ws8; workspace number $ws8
 
 # reload the configuration file
-bindsym $mod+Shift+r reload
+bindsym $mod+Shift+r reload; exec "sh ~/.fehbg &"
 # restart i3 inplace
-bindsym $mod+$alt+r restart
+bindsym $mod+$alt+r restart; exec "sh ~/.fehbg &"
+
+# screenshot
+bindsym $mod+Shift+s exec "flameshot gui"
+# lock
+bindsym $mod+ctrl+l exec "betterlockscreen -l"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+$alt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+g exec "google-chrome-stable"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -138,16 +181,15 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Shift+h resize shrink width 5 px or 5 ppt
+        bindsym Shift+j resize grow height 5 px or 5 ppt
+        bindsym Shift+k resize shrink height 5 px or 5 ppt
+        bindsym Shift+l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -173,7 +215,8 @@ bar {
 ## Open on workspace
 assign [class="kitty"] 7
 assign [class="Alacritty"] 7
-assign [class="Google-chrome*"] 8
-assign [class="firefox"] 8
-assign [class="Spotify"] 1
+assign [class="Google-chrome*"] $ws1
+assign [class="firefox"] $ws1
+assign [class="Spotify"] music
+assign [class="teams-for-linux"] teams
 
