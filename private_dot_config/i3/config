@@ -93,7 +93,7 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+s floating toggle
+#bindsym $mod+s floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
@@ -151,8 +151,6 @@ bindsym $mod+$alt+r restart; exec "sh ~/.fehbg &"
 
 # screenshot
 bindsym $mod+Shift+s exec "flameshot gui"
-# lock
-bindsym $mod+ctrl+l exec "betterlockscreen -l"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+$alt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -182,8 +180,14 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+mode "system" {
+	bindsym $mod+s exec --no-startup-id ~/.config/i3/i3exit.sh poweroff; mode "default"
+	bindsym $mod+l exec --no-startup-id ~/.config/i3/i3exit.sh lock; mode "default"
+	bindsym $mod+r exec --no-startup-id ~/.config/i3/i3exit.sh reboot; mode "default"
+}
+bindsym $mod+s mode "system"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -195,6 +199,16 @@ bar {
 
 	workspace_min_width 10
 	workspace_buttons yes
+
+	# colors			border		background		text
+	colors {
+		background  #00000000
+
+		focused_workspace #C49C54 #ffca6d #000000
+		inactive_workspace #704d70 #a470a4 #000000
+		active_workspace #98B3FD #87aefd #000000
+		urgent_workspace #C75220 #ff6929 #000000
+	}
 }
 
 
