@@ -1,0 +1,222 @@
+set $mod Mod4
+set $alt Mod1
+
+font pango:monospace 8
+exec --no-startup-id "sh ~/.fehbg &" 
+exec --no-startup-id "xset r rate 400 50" 
+
+## Config
+focus_follows_mouse no
+focus_on_window_activation focus
+workspace_auto_back_and_forth no
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+## Theme
+
+client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
+client.unfocused #ffca4d #ffca4d #000000 #a470a4 #a470a4
+
+default_border pixel 1
+
+### Binding
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+bindsym $mod+Return exec kitty
+bindsym $mod+q kill
+bindsym $mod+space exec --no-startup-id rofi -show run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Switch workspace
+bindsym $mod+$alt+h workspace prev
+bindsym $mod+$alt+l workspace next
+
+# send 
+bindsym $mod+$alt+shift+h move to workspace prev; workspace prev
+bindsym $mod+$alt+Shift+l move to workspace next; workspace next
+
+mode "split" {
+	bindsym $mod+h split horizontal; mode "default"
+	bindsym $mod+v split vertical; mode "default"
+	bindsym $mod+t split toggle; mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+b mode "split"
+
+# split in horizontal orientation
+#bindsym $mod+o split h
+# split in vertical orientation
+#bindsym $mod+v split v
+
+# fullscreen for focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+
+# change focus between tiling / floating windows
+#bindsym $mod+space focus mode_toggle
+
+# Workspaces settings
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws11 "5"
+
+set $ws12 "6"
+set $ws5 "7"
+set $ws6 "8"
+set $ws7 "9"
+set $ws8 "0"
+
+set $ws9 "music"
+set $ws10 "teams"
+
+workspace $ws1 output DP-1-1
+workspace $ws2 output DP-1-1
+workspace $ws3 output DP-1-1
+workspace $ws4 output DP-1-1
+workspace $ws11 output DP-1-1
+
+workspace $ws12 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
+
+
+# switch to workspace
+bindcode $mod+10 workspace number $ws1
+bindcode $mod+11 workspace number $ws2
+bindcode $mod+12 workspace number $ws3
+bindcode $mod+13 workspace number $ws4
+
+bindcode $mod+14 workspace $ws9
+bindcode $mod+15 workspace $ws10
+
+bindcode $mod+16 workspace number $ws5
+bindcode $mod+17 workspace number $ws6
+bindcode $mod+18 workspace number $ws7
+bindcode $mod+19 workspace number $ws8
+
+# move focused container to workspace
+bindcode $mod+Shift+10 move container to workspace number $ws1; workspace number $ws1
+bindcode $mod+Shift+11 move container to workspace number $ws2; workspace number $ws2
+bindcode $mod+Shift+12 move container to workspace number $ws3; workspace number $ws3
+bindcode $mod+Shift+13 move container to workspace number $ws4; workspace number $ws4
+
+bindcode $mod+Shift+14 move container to workspace $ws9; workspace $ws9
+bindcode $mod+Shift+15 move container to workspace $ws10; workspace $ws10
+
+bindcode $mod+Shift+16 move container to workspace number $ws5; workspace number $ws5
+bindcode $mod+Shift+17 move container to workspace number $ws6; workspace number $ws6
+bindcode $mod+Shift+18 move container to workspace number $ws7; workspace number $ws7
+bindcode $mod+Shift+19 move container to workspace number $ws8; workspace number $ws8
+
+# reload the configuration file
+bindsym $mod+Shift+r reload; exec "sh ~/.fehbg &"
+# restart i3 inplace
+bindsym $mod+$alt+r restart; exec "sh ~/.fehbg &"
+
+# screenshot
+bindsym $mod+Shift+s exec "flameshot gui"
+# lock
+bindsym $mod+ctrl+l exec "betterlockscreen -l"
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+$alt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+g exec "google-chrome-stable"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym Shift+h resize shrink width 5 px or 5 ppt
+        bindsym Shift+j resize grow height 5 px or 5 ppt
+        bindsym Shift+k resize shrink height 5 px or 5 ppt
+        bindsym Shift+l resize grow width 5 px or 5 ppt
+
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	status_command i3status
+	id bar1
+
+	position bottom
+
+	workspace_min_width 10
+	workspace_buttons yes
+}
+
+
+## Open on workspace
+assign [class="kitty"] 7
+assign [class="Alacritty"] 7
+assign [class="Google-chrome*"] $ws1
+assign [class="firefox"] $ws1
+assign [class="Spotify"] music
+assign [class="teams-for-linux"] teams
+
