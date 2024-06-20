@@ -103,31 +103,23 @@ set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
-set $ws11 "5"
 
-set $ws12 "6"
 set $ws5 "7"
 set $ws6 "8"
 set $ws7 "9"
 set $ws8 "0"
 
-set $ws9 "music"
-set $ws10 "teams"
 
-workspace $ws1 output DP-1-1
-workspace $ws2 output DP-1-1
-workspace $ws3 output DP-1-1
-workspace $ws4 output DP-1-1
-workspace $ws11 output DP-1-1
+# two screen conf
+workspace $ws1 output nonprimary
+workspace $ws2 output nonprimary
+workspace $ws3 output nonprimary
+workspace $ws4 output nonprimary
 
-workspace $ws12 output primary
 workspace $ws5 output primary
 workspace $ws6 output primary
 workspace $ws7 output primary
 workspace $ws8 output primary
-
-workspace $ws9 output eDP-1
-workspace $ws10 output eDP-1
 
 
 # switch to workspace
@@ -135,9 +127,6 @@ bindcode $mod+10 workspace number $ws1
 bindcode $mod+11 workspace number $ws2
 bindcode $mod+12 workspace number $ws3
 bindcode $mod+13 workspace number $ws4
-
-bindcode $mod+14 workspace $ws9
-bindcode $mod+15 workspace $ws10
 
 bindcode $mod+16 workspace number $ws5
 bindcode $mod+17 workspace number $ws6
@@ -149,9 +138,6 @@ bindcode $mod+Shift+10 move container to workspace number $ws1; workspace number
 bindcode $mod+Shift+11 move container to workspace number $ws2; workspace number $ws2
 bindcode $mod+Shift+12 move container to workspace number $ws3; workspace number $ws3
 bindcode $mod+Shift+13 move container to workspace number $ws4; workspace number $ws4
-
-bindcode $mod+Shift+14 move container to workspace $ws9; workspace $ws9
-bindcode $mod+Shift+15 move container to workspace $ws10; workspace $ws10
 
 bindcode $mod+Shift+16 move container to workspace number $ws5; workspace number $ws5
 bindcode $mod+Shift+17 move container to workspace number $ws6; workspace number $ws6
@@ -215,8 +201,10 @@ bar {
 ## Open on workspace
 assign [class="kitty"] 7
 assign [class="Alacritty"] 7
-assign [class="Google-chrome*"] $ws1
-assign [class="firefox"] $ws1
-assign [class="Spotify"] music
+assign [class="Google-chrome*"] 8
+assign [class="firefox"] 8
+assign [class="Spotify"] 1
 assign [class="teams-for-linux"] teams
+assign [class="discord"] 2
+assign [class="telegram-desktop"] 2
 
