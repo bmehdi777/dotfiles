@@ -85,7 +85,7 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+s floating toggle
+#bindsym $mod+s floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
