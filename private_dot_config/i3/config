@@ -84,9 +84,6 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+w layout tabbed
 #bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-#bindsym $mod+s floating toggle
-
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
 
@@ -161,39 +158,32 @@ bindsym $mod+Shift+s exec "flameshot gui"
 bindsym $mod+ctrl+l exec "betterlockscreen -l"
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+$alt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+$alt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+g exec "google-chrome-stable"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym Shift+h resize shrink width 5 px or 5 ppt
-        bindsym Shift+j resize grow height 5 px or 5 ppt
-        bindsym Shift+k resize shrink height 5 px or 5 ppt
-        bindsym Shift+l resize grow width 5 px or 5 ppt
+        bindsym shift+h resize shrink width 10 px or 10 ppt
+        bindsym shift+j resize grow height 10 px or 10 ppt
+        bindsym shift+k resize shrink height 10 px or 10 ppt
+        bindsym shift+l resize grow width 10 px or 10 ppt
 
         bindsym h resize shrink width 1 px or 1 ppt
         bindsym j resize grow height 1 px or 1 ppt
         bindsym k resize shrink height 1 px or 1 ppt
         bindsym l resize grow width 1 px or 1 ppt
 
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+y mode "resize"
 
 mode "system" {
-	bindsym $mod+s exec --no-startup-id ~/.config/i3/i3exit.sh poweroff; mode "default"
-	bindsym $mod+l exec --no-startup-id ~/.config/i3/i3exit.sh lock; mode "default"
-	bindsym $mod+r exec --no-startup-id ~/.config/i3/i3exit.sh reboot; mode "default"
+	bindsym $mod+ctrl+s exec --no-startup-id ~/.config/i3/i3exit.sh poweroff; mode "default"
+	bindsym $mod+ctrl+l exec --no-startup-id ~/.config/i3/i3exit.sh lock; mode "default"
+	bindsym $mod+ctrl+r exec --no-startup-id ~/.config/i3/i3exit.sh reboot; mode "default"
 	bindsym Escape mode "default"
 }
 bindsym $mod+s mode "system"
@@ -206,7 +196,7 @@ mode "layout" {
 	bindsym $mod+d layout default; mode "default"
 	bindsym Escape mode "default"
 }
-bindsym $mod+t mode "layout"
+bindsym $mod+u mode "layout"
 
 mode "split" {
 	bindsym $mod+h split horizontal; mode "default"
@@ -214,7 +204,11 @@ mode "split" {
 	bindsym $mod+t split toggle; mode "default"
 	bindsym Escape mode "default"
 }
-bindsym $mod+b mode "split"
+bindsym $mod+i mode "split"
+
+# toggle tiling / floating
+bindsym $mod+o floating toggle
+
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
