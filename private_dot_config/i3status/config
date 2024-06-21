@@ -14,7 +14,7 @@ order += "ethernet _first_"
 order += "disk /"
 order += "memory"
 order += "cpu_temperature 0"
-order += "battery 1"
+order += "battery 0"
 order += "tztime localdate"
 order += "tztime localtime"
 # order += "load"
@@ -58,7 +58,7 @@ tztime localdate {
         format = "<span color='#F39C12' size='large'> </span> <span bgcolor='#F39C12' foreground='black'> %a %d-%m-%Y </span>"
 }
 
-battery 1 {
+battery 0 {
         format = "<span color='#34e0bf' size='large'>%status</span> <span bgcolor='#34e0bf' foreground='black'> %percentage </span>"
         format_down = "No battery"
         status_chr = "⚡ "
