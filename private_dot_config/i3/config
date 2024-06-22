@@ -28,7 +28,7 @@ exec --no-startup-id nm-applet
 ## Theme
 
 client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
-client.unfocused #ffca4d #ffca4d #000000 #a470a4 #a470a4
+client.unfocused #a470a4 #a470a4 #000000 #a470a4 #a470a4
 
 #default_border pixel 1
 
