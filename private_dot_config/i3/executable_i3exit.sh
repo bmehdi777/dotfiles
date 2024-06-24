@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 
-function lock {
-	betterlockscreen -l
-}
-
 case "$1" in
     lock)
         betterlockscreen -l
@@ -18,7 +14,7 @@ case "$1" in
         systemctl reboot
         ;;
     poweroff)
-        shutdown now
+        systemctl poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|reboot|poweroff}"
