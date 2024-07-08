@@ -222,7 +222,7 @@ bar {
 ## Open on workspace
 assign [class="kitty"] 7
 assign [class="Alacritty"] 7
-assign [class="Google-chrome*"] 1
+assign [class="Google-chrome*"] 8
 assign [class="firefox"] 8
 assign [class="Spotify"] 1
 assign [class="teams-for-linux"] teams
