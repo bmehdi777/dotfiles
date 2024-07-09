@@ -52,6 +52,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id rofi -show run
 
+bindsym $mod+minus scratchpad show; floating toggle
+bindsym $mod+Shift+minus move scratchpad
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
