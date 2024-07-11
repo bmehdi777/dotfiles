@@ -250,4 +250,4 @@ assign [class="Google-chrome*"] $ws1
 assign [class="firefox"] $ws1
 assign [class="Spotify"] music
 assign [class="teams-for-linux"] teams
-
+assign [class="obsidian"] $ws6
