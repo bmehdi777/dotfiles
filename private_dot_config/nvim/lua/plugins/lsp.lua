@@ -34,9 +34,31 @@ return {
 		})
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
-				nvim_lsp[server_name].setup(config())
+				if server_name == "tsserver" then
+					local _conf = {
+						capabilities = capabilities,
+						commands = {
+							OrganizeImports = {
+								description = "Organize Imports",
+								function()
+									local params = {
+										command = "_typescript.organizeImports",
+										arguments = {vim.api.nvim_buf_get_name(0)},
+										title = ""
+									}
+									vim.lsp.buf.execute_command(params)
+								end
+							}
+						}
+					}
+					nvim_lsp[server_name].setup(config(_conf))
+				else
+
+					nvim_lsp[server_name].setup(config())
+				end
 			end
 		})
+
 
 		vim.api.nvim_create_autocmd('LspAttach', {
 			group = vim.api.nvim_create_augroup('UserLspConfig', {}),
