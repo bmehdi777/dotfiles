@@ -13,17 +13,25 @@ function M.getVisualSelection()
 	end
 end
 
+function jsTsFormat()
+	vim.cmd("Prettier")
+	local _, choice = pcall(vim.fn.confirm, "Organize imports ?", "Yes\nNo", 1)
+	if choice == 1 then
+		vim.cmd("OrganizeImports")
+	end
+end
+
 function M.format()
 	local fmt_table = {
 		["rust"] = function()
 			vim.cmd("%! rustfmt")
-		end
+		end,
+		["typescript"] = jsTsFormat,
+		["javascript"] = jsTsFormat
 	}
 	local func = fmt_table[vim.bo.filetype]
 	if (func) then
 		func()
-	else
-		vim.cmd("Prettier")
 	end
 end
 
