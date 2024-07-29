@@ -57,10 +57,10 @@ Go to next buffer | <leader>bn
 Close buffer | <leader>bc
 
 ## Tab
-Go to first tab | <leader>tf
-Go to last tab | <leader>tl
-Go to next tab | <leader>tn
-Go to previous tab | <leader>tp
+Go to first tab | <leader>tgg
+Go to last tab | <leader>tG
+Go to next tab | <leader>tl
+Go to previous tab | <leader>th
 Close tab | <leader>tc
 
 ## Register
@@ -94,8 +94,8 @@ Harpoon go to 4 | <leader>4
 
 ## Aerial
 Aerial toggle | <leader>a<Tab>
-Aerial prev | <leader>ap
-Aerial next | <leader>an
+Aerial prev | <leader>ak
+Aerial next | <leader>aj
 
 ## Gitsigns
 Toggle current line blame | <leader>bcl
@@ -109,6 +109,9 @@ Close file | <C-c>
 Refresh | <C-l>
 Vertical split | <C-s>
 Horizontal split | <C-t>
+
+## DB/dadbod
+Open UI | <leader>dbui
 
 ## Other
 Navigate to left pane | <C-h>

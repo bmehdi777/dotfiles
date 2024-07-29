@@ -97,7 +97,8 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "nvim_lsp"},
-				{ name = "nvim_lsp_signature_help"}
+				{ name = "nvim_lsp_signature_help"},
+				{ name = "vim-dadbod-completion"}
 			}
 		})
 	end

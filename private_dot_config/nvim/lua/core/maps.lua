@@ -32,10 +32,10 @@ nnoremap("<leader>bn",":bn<CR>", { silent=true })
 nnoremap("<leader>bp",":bp<CR>", { silent=true })
 nnoremap("<leader>bc",":bw<CR>", { silent=true })
 -- Tab
-nnoremap("<leader>tn", ":tabn<CR>", { silent=true })
-nnoremap("<leader>tp", ":tabp<CR>", { silent=true })
-nnoremap("<leader>tl", ":tabl<CR>", { silent=true })
-nnoremap("<leader>tf", ":tabr<CR>", { silent=true })
+nnoremap("<leader>tl", ":tabn<CR>", { silent=true })
+nnoremap("<leader>th", ":tabp<CR>", { silent=true })
+nnoremap("<leader>tG", ":tabl<CR>", { silent=true })
+nnoremap("<leader>tgg", ":tabr<CR>", { silent=true })
 nnoremap("<leader>tc", ":tabc<CR>", { silent=true })
 
 -- Register
@@ -71,8 +71,8 @@ nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=tru
 
 -- Aerial
 nnoremap("<leader>a<Tab>", ":AerialToggle!<CR>", { silent=true })
-nnoremap("<leader>an", ":AerialNext<CR>", { silent=true })
-nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
+nnoremap("<leader>aj", ":AerialNext<CR>", { silent=true })
+nnoremap("<leader>ak", ":AerialPrev<CR>", { silent=true })
 
 -- Lsp
 nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
@@ -93,3 +93,6 @@ nnoremap("<leader>tr", "<cmd> Telescope resume<CR>")
 
 -- Oil
 nnoremap("<leader>o", ":Oil<CR>", { silent = true })
+
+-- DB - Dadbod
+nnoremap("<leader>dbui", ":lua require('core.functions').openInNewTab(':DBUI')<CR>", { silent = true})
