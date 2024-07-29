@@ -95,10 +95,15 @@ return {
 			},
 			sources = {
 				{ name = "luasnip" },
-				{ name = "path" },
 				{ name = "nvim_lsp"},
 				{ name = "nvim_lsp_signature_help"},
-				{ name = "vim-dadbod-completion"}
+				{ name = "path" },
+			}
+		})
+		cmp.setup.filetype({ "sql", "mysql" }, {
+			sources = {
+				{ name = "vim-dadbod-completion"},
+				{ name = "buffer" },
 			}
 		})
 	end
