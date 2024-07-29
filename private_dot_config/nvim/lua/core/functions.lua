@@ -40,4 +40,9 @@ function M.format()
 	end
 end
 
+function M.openInNewTab(cmd)
+	vim.cmd(":tabnew")
+	vim.cmd(cmd)
+end
+
 return M
