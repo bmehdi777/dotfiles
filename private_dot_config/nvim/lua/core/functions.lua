@@ -31,7 +31,7 @@ function M.format()
 		["javascript"] = jsTsFormat,
 		["go"] = function()
 			local curPos = vim.api.nvim_win_get_cursor(0)
-			vim.cmd("!go fmt %")
+			vim.cmd("silent !go fmt %")
 		end
 	}
 	local func = fmt_table[vim.bo.filetype]
