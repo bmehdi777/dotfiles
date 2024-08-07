@@ -114,7 +114,7 @@ Horizontal split | <C-t>
 Open UI | <leader>dbui
 
 ## Fugitive
-Open fugitive panel | <leader>Git
+Open fugitive panel | <leader>Gs
 Open vdiff file | <leader>Gd
 Open file in hub | <leader>Go
 Open blame panel | <leader>Gb
