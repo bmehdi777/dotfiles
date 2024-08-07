@@ -90,9 +90,14 @@ nnoremap("<leader>gb", "<cmd>Telescope git_branches<CR>")
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
 nnoremap("<leader>tr", "<cmd> Telescope resume<CR>")
 
-
 -- Oil
 nnoremap("<leader>o", ":Oil<CR>", { silent = true })
 
 -- DB - Dadbod
 nnoremap("<leader>dbui", ":lua require('core.functions').openInNewTab(':DBUI')<CR>", { silent = true})
+
+-- Fugitive
+nnoremap("<leader>GIT", ":Git<CR>", { silent=true })
+nnoremap("<leader>GD", ":Gvdiffsplit!<CR>", { silent=true })
+nnoremap("<leader>GO", ":GBrowse<CR>", { silent=true })
+nnoremap("<leader>GB", ":Git blame<CR>", { silent=true })

@@ -23,7 +23,9 @@ function M.format()
 			vim.cmd("%! rustfmt")
 		end,
 		["typescript"] = jsTsFormat,
+		["typescriptreact"] = jsTsFormat,
 		["javascript"] = jsTsFormat,
+		["javascriptreact"] = jsTsFormat,
 		["go"] = function()
 			local curPos = vim.api.nvim_win_get_cursor(0)
 			vim.cmd("silent !go fmt %")

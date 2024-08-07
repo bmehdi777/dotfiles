@@ -113,9 +113,16 @@ Horizontal split | <C-t>
 ## DB/dadbod
 Open UI | <leader>dbui
 
+## Fugitive
+Open fugitive panel | <leader>GIT
+Open vdiff file | <leader>GD
+Open file in hub | <leader>GO
+Open blame panel | <leader>GB
+
 ## Other
 Navigate to left pane | <C-h>
 Navigate to bottom pane | <C-j>
 Navigate to top pane | <C-k>
 Navigate to right pane | <C-l>
 Yank to clipboard | <leader>y
+
