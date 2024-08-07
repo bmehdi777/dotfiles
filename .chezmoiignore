@@ -2,6 +2,7 @@ readme.md
 gitconfig
 .bspwm/.bspwmrc_home
 .config/bspwm/.bspwmrc_work
+.config/nvim/lua/core/ignore.lua
 .xsessionrc_home
 .xsessionrc_work
 .config/nvim/plugin/
