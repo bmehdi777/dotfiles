@@ -25,7 +25,9 @@ function M.format()
 			vim.api.nvim_win_set_cursor(0,curPos)
 		end,
 		["typescript"] = jsTsFormat,
+		["typescriptreact"] = jsTsFormat,
 		["javascript"] = jsTsFormat,
+		["javascriptreact"] = jsTsFormat,
 		["go"] = function()
 			local curPos = vim.api.nvim_win_get_cursor(0)
 			vim.cmd("silent !go fmt %")
