@@ -97,7 +97,7 @@ nnoremap("<leader>o", ":Oil<CR>", { silent = true })
 nnoremap("<leader>dbui", ":lua require('core.functions').openInNewTab(':DBUI')<CR>", { silent = true})
 
 -- Fugitive
-nnoremap("<leader>GIT", ":Git<CR>", { silent=true })
-nnoremap("<leader>GD", ":Gvdiffsplit!<CR>", { silent=true })
-nnoremap("<leader>GO", ":GBrowse<CR>", { silent=true })
-nnoremap("<leader>GB", ":Git blame<CR>", { silent=true })
+nnoremap("<leader>Git", ":Git<CR>", { silent=true })
+nnoremap("<leader>Gd", ":Gvdiffsplit!<CR>", { silent=true })
+nnoremap("<leader>Go", ":GBrowse<CR>", { silent=true })
+nnoremap("<leader>Gb", ":Git blame<CR>", { silent=true })
