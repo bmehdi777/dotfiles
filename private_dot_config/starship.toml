@@ -17,7 +17,7 @@ add_newline = false
 [username]
 disabled = false
 show_always = true
-format = " [$user](#ffb74a)"
+format = "[$user](#ffb74a)"
 
 [hostname]
 format = "[$hostname](#ffb74a)"
