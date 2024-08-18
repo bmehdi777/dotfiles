@@ -50,7 +50,7 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec wezterm
 bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id rofi -show run
 
