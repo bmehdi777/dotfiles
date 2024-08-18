@@ -248,6 +248,7 @@ bar {
 ## Open on workspace
 assign [class="kitty"] 7
 assign [class="Alacritty"] 7
+assign [class="wezterm"] 7
 assign [class="Google-chrome*"] $ws1
 assign [class="firefox"] $ws1
 assign [class="Spotify"] music
