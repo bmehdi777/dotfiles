@@ -11,7 +11,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				file_ignore_patterns = { "node_modules" },
+				file_ignore_patterns = { "node_modules", "^.git$" },
 				vimgrep_arguments = {
 					'rg',
 					'--color=never',
@@ -41,7 +41,11 @@ return {
 		local func = require("core/functions")
 		vnoremap("<C-f>", function()
 			local text = func.getVisualSelection()
-			telescope_builtin.live_grep({ default_text = text })
+			telescope_builtin.live_grep({ default_text = text, hidden=true })
 		end, { silent=true })
+		vnoremap("<C-p>", function()
+			local text = func.getVisualSelection()
+			telescope_builtin.find_files({ default_text = text, hidden=true })
+		end, { silent=true})
 	end
 }
