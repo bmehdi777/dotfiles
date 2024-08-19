@@ -54,8 +54,8 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id rofi -show run
 
-bindsym $mod+minus scratchpad show; floating toggle
-bindsym $mod+Shift+minus move scratchpad
+#bindsym $mod+minus scratchpad show; floating toggle
+#bindsym $mod+Shift+minus move scratchpad
 
 # change focus
 bindsym $mod+h focus left
