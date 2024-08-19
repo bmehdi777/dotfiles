@@ -5,10 +5,12 @@
     - using _oh-my-zsh_
 - editor : _neovim_
 - terminal manager : _tmux_
+- terminal : _wezterm_
 - tools :
     - lazygit
     - git-delta (see/gitdiff side by side)
     - exa to replace ls
+    - zoxide for z
 
 ## Linux
 
