@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/bmehdi/Images/Wallpaper/pxfuel.jpg' 
+feh --no-fehbg --bg-scale '/home/bmehdi/Images/Wallpaper/colorkit (3).png' 
