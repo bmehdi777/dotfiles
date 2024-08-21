@@ -210,6 +210,13 @@ mode "split" {
 }
 bindsym $mod+i mode "split"
 
+mode "brightness" {
+	bindsym $mod+j exec --no-startup-id ~/.config/i3/i3brightness.sh down 
+	bindsym $mod+k exec --no-startup-id ~/.config/i3/i3brightness.sh up 
+	bindsym $mod+r exec --no-startup-id ~/.config/i3/i3brightness.sh reset; mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+b mode "brightness"
 # toggle tiling / floating
 bindsym $mod+o floating toggle
 
