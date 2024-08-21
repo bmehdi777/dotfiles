@@ -107,11 +107,11 @@ set $ws8 "0"
 set $ws9 "music"
 set $ws10 "teams"
 
-workspace $ws1 output DP-3
-workspace $ws2 output DP-3
-workspace $ws3 output DP-3
-workspace $ws4 output DP-3
-workspace $ws11 output DP-3
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws11 output primary
 
 workspace $ws12 output primary
 workspace $ws5 output primary
