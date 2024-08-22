@@ -110,15 +110,27 @@ set $ws8 "0"
 
 
 # two screen conf
-workspace $ws1 output nonprimary
-workspace $ws2 output nonprimary
-workspace $ws3 output nonprimary
-workspace $ws4 output nonprimary
+# primary screen wont set up at boot so lets brute force these output
+#workspace $ws1 output nonprimary
+#workspace $ws2 output nonprimary
+#workspace $ws3 output nonprimary
+#workspace $ws4 output nonprimary
+#
+#workspace $ws5 output primary
+#workspace $ws6 output primary
+#workspace $ws7 output primary
+#workspace $ws8 output primary
 
-workspace $ws5 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws8 output primary
+
+workspace $ws1 output DP-1-1
+workspace $ws2 output DP-1-1
+workspace $ws3 output DP-1-1
+workspace $ws4 output DP-1-1
+
+workspace $ws5 output DP-1-2
+workspace $ws6 output DP-1-2
+workspace $ws7 output DP-1-2
+workspace $ws8 output DP-1-2
 
 
 # switch to workspace
