@@ -19,6 +19,7 @@ return {
 			"rust_analyzer",
 			"tsserver",
 			"quick_lint_js",
+			"gopls"
 		}
 		local function config(_config)
 			return vim.tbl_deep_extend("force", {
