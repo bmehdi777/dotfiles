@@ -91,7 +91,7 @@ nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
 nnoremap("<leader>tr", "<cmd> Telescope resume<CR>")
 
 -- Oil
-nnoremap("<leader>o", ":Oil<CR>", { silent = true })
+nnoremap("<leader>o", ":Oil --float<CR>", { silent = true })
 
 -- DB - Dadbod
 nnoremap("<leader>dbui", ":lua require('core.functions').openInNewTab(':DBUI')<CR>", { silent = true})
