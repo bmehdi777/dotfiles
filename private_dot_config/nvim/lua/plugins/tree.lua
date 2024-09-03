@@ -7,6 +7,7 @@ return {
 
 		tree.setup({
 			renderer = {
+				root_folder_label = false,
 				icons = {
 					show = {
 						file = true,
