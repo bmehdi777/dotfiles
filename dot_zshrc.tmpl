@@ -23,7 +23,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin:$PATH
 {{ end }}
 {{ if eq .chezmoi.os "linux"}}
-export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.atuin/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.atuin/bin:$HOME/go/bin
 {{ end }}
 
 # FZF
