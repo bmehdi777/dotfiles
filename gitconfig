@@ -21,3 +21,8 @@
 [diff]
     colorMoved = default
 
+[alias]
+    forget="!git fetch -p && git branch -vv | awk '(/: gone]/ || /: disparue]/){print $1}' | xargs git branch -D"
+    forgetls="!git fetch -p && git branch -vv | awk '(/: gone]/ || /: disparue]/){print $1}'"
+    uncommit = reset --soft HEAD~1
+
