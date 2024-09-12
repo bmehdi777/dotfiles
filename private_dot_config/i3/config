@@ -2,9 +2,7 @@ set $mod Mod4
 set $alt Mod1
 
 font pango:JetBrainsMonoNFM-Medium 8
-exec --no-startup-id "sh ~/.fehbg &" 
-exec --no-startup-id "xset r rate 400 50" 
-exec --no-startup-id picom -b
+exec_always --no-startup-id $HOME/.config/i3/startup.sh
 
 ## Config
 focus_follows_mouse no
@@ -107,11 +105,19 @@ set $ws8 "0"
 set $ws9 "music"
 set $ws10 "teams"
 
-workspace $ws1 output primary
-workspace $ws2 output primary
-workspace $ws3 output primary
-workspace $ws4 output primary
-workspace $ws11 output primary
+# work setup
+#workspace $ws1 output primary
+#workspace $ws2 output primary
+#workspace $ws3 output primary
+#workspace $ws4 output primary
+#workspace $ws11 output primary
+# home setup
+workspace $ws1 output DP-1-1
+workspace $ws2 output DP-1-1
+workspace $ws3 output DP-1-1
+workspace $ws4 output DP-1-1
+workspace $ws11 output DP-1-1
+
 
 workspace $ws12 output primary
 workspace $ws5 output primary
@@ -250,8 +256,8 @@ bar {
 assign [class="kitty"] 7
 assign [class="Alacritty"] 7
 assign [class="wezterm"] 7
-assign [class="Google-chrome*"] $ws1
-assign [class="firefox"] $ws1
+assign [class="Google-chrome*"] 8
+assign [class="firefox"] 8
 assign [class="Spotify"] music
 assign [class="teams-for-linux"] teams
 assign [class="obsidian"] $ws6
