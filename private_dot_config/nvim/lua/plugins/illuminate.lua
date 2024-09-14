@@ -12,6 +12,7 @@ return {
 				'dirbuf',
 				'dirvish',
 				'fugitive',
+				'NvimTree'
 			},
 			filetypes_allowlist = {},
 			modes_denylist = {},
