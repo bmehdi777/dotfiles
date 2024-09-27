@@ -31,7 +31,7 @@ gaps inner 10
 client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
 client.unfocused #a470a4 #a470a4 #000000 #a470a4 #a470a4
 
-default_border pixel 0
+default_border pixel 1
 
 ### Binding
 
@@ -112,11 +112,11 @@ set $ws10 "teams"
 #workspace $ws4 output primary
 #workspace $ws11 output primary
 # home setup
-workspace $ws1 output DP-1-1
-workspace $ws2 output DP-1-1
-workspace $ws3 output DP-1-1
-workspace $ws4 output DP-1-1
-workspace $ws11 output DP-1-1
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws11 output DP-1
 
 
 workspace $ws12 output primary
