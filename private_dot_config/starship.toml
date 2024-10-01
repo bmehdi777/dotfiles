@@ -10,6 +10,7 @@ $git_commit\
 $git_state\
 $git_status\
 $git_metrics\
+$nodejs\
 """
 
 add_newline = false
@@ -75,3 +76,7 @@ disabled = false
 format = '[(\($virtualenv\) )]($style)'
 style = "#ff3399"
 detect_folders = ['venv/', 'env/']
+
+[nodejs]
+format = '[\[$version\]]($style)'
+style = "cyan"
