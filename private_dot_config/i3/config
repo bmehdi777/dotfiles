@@ -4,7 +4,6 @@ set $alt Mod1
 font pango:JetBrainsMonoNFM-Medium 8
 exec --no-startup-id "sh ~/.fehbg &" 
 exec --no-startup-id "xset r rate 400 50" 
-exec --no-startup-id picom -b
 
 ## Config
 focus_follows_mouse no
@@ -36,7 +35,7 @@ gaps inner 10
 client.focused #ffca4d #ffca4d #000000 #ffca6d #ffca6d
 client.unfocused #a470a4 #a470a4 #000000 #a470a4 #a470a4
 
-default_border pixel 0
+default_border pixel 1
 
 ### Binding
 
