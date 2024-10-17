@@ -18,6 +18,18 @@ alias cht='bash ~/.local/bin/cht/cht.sh'
 
 alias gp='git push'
 alias ggraph='git log --graph --oneline --all'
+alias gst='git status'
+alias gc='git commit'
+alias gco='git checkout'
+alias gd='git diff'
+# cd root of git project
+alias cdr='cd $(git rev-parse --show-toplevel)'
+# git checkout fuzzy
+gcof() {
+  git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
+}
+
+alias lg='lazygit'
 
 {{ if eq .chezmoi.os "darwin"}}
 alias cat='bat'
@@ -25,4 +37,3 @@ alias cat='bat'
 alias bat='bat'
 alias cat='bat'
 {{ end }}
-alias lg='lazygit'
