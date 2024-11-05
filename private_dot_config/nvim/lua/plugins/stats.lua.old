@@ -1,0 +1,7 @@
+return {
+  dir = "~/Workspace/labs/stats.nvim",
+  name = "stats",
+  config = function ()
+    require('stats').setup()
+  end
+}

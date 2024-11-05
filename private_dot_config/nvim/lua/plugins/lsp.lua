@@ -11,15 +11,29 @@ return {
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 		{ "rafamadriz/friendly-snippets"},
+
+		{
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 	},
 	config = function()
 		local nvim_lsp = require("lspconfig")
 		local servers = {
 			"clangd",
 			"rust_analyzer",
-			"tsserver",
+			"ts_ls",
 			"quick_lint_js",
-			"gopls"
+			"gopls",
+			"lua_ls"
 		}
 		local function config(_config)
 			return vim.tbl_deep_extend("force", {
@@ -54,7 +68,6 @@ return {
 					}
 					nvim_lsp[server_name].setup(config(_conf))
 				else
-
 					nvim_lsp[server_name].setup(config())
 				end
 			end
@@ -99,6 +112,7 @@ return {
 				{ name = "nvim_lsp"},
 				{ name = "nvim_lsp_signature_help"},
 				{ name = "path" },
+				{ name = "lazydev" },
 			}
 		})
 		cmp.setup.filetype({ "sql", "mysql" }, {
