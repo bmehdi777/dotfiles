@@ -1,7 +1,7 @@
 return {
 	"RRethy/vim-illuminate",
 	config = function()
-		local illuminate = require("illuminate").configure({
+		require("illuminate").configure({
 			proivders = {
 				'lsp',
 				'treesitter',
