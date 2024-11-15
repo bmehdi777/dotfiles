@@ -29,5 +29,9 @@ return {
 			extended_mode = true,
 			max_file_lines = nil,
 		},
-	}
+	},
+	config = function(_, opts)
+		local treesitter = require("nvim-treesitter.configs")
+		treesitter.setup(opts)
+	end
 }
