@@ -73,7 +73,10 @@ function vmrss() {
 function loadenv() { (set -a && source "$1" && shift && "$@"); }
 
 # open path in other tmux window
-function cdw() {
-	p=$(realpath $1)
-	tmux new-window -c $p -d
+function cdtw() {
+	for directory in "$@"
+	do
+		p=$(realpath $directory)
+		tmux new-window -c $p -d
+	done
 }
