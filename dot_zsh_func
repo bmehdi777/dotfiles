@@ -71,3 +71,9 @@ function vmrss() {
 
 # load env variable for the __current__ shell command only
 function loadenv() { (set -a && source "$1" && shift && "$@"); }
+
+# open path in other tmux window
+function cdw() {
+	p=$(realpath $1)
+	tmux new-window -c $p -d
+}
