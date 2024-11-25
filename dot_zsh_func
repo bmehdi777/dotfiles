@@ -73,10 +73,17 @@ function vmrss() {
 function loadenv() { (set -a && source "$1" && shift && "$@"); }
 
 # open path in other tmux window
-function cdtw() {
+function cdw() {
 	for directory in "$@"
 	do
 		p=$(realpath $directory)
 		tmux new-window -c $p -d
 	done
+}
+
+function encode() {
+	echo -n "$1" | base64 -w 0
+}
+function decode() {
+	echo $1 | base64 --decode
 }
