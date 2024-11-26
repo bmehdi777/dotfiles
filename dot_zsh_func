@@ -87,3 +87,6 @@ function encode() {
 function decode() {
 	echo $1 | base64 --decode
 }
+function jwtdecode() {
+	echo $1 | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
+}
