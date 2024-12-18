@@ -24,5 +24,6 @@
 [alias]
     forget="!git fetch -p && git branch -vv | awk '(/: gone]/ || /: disparue]/){print $1}' | xargs git branch -D"
     forgetls="!git fetch -p && git branch -vv | awk '(/: gone]/ || /: disparue]/){print $1}'"
-    uncommit = reset --soft HEAD~1
-
+    uncommit="reset --soft HEAD~1"
+		stash-all="stash --include-untracked"
+		open="!git config --get remote.origin.url | xargs xdg-open"
