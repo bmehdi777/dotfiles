@@ -1,11 +1,14 @@
 return {
 	"ThePrimeagen/harpoon",
 	dependencies = {
-		{ 'nvim-lua/plenary.nvim' }
+		{'nvim-lua/plenary.nvim'}
 	},
-	opts = {
-		menu = {
-			width = 100
-		}
-	}
+	config = function()
+		local harpoon = require("harpoon")
+		harpoon.setup({
+			menu = {
+				width = 100
+			}
+		})
+	end
 }

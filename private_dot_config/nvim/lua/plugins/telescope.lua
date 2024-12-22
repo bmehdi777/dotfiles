@@ -8,9 +8,15 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
+
 		telescope.setup({
+			pickers = {
+				lsp_references = {
+					theme = "ivy"
+				},
+			},
 			defaults = {
-				file_ignore_patterns = { "node_modules" },
+				file_ignore_patterns = { "node_modules", "^.git$" },
 				vimgrep_arguments = {
 					'rg',
 					'--color=never',
@@ -36,16 +42,15 @@ return {
 		})
 
 		local telescope_builtin = require("telescope.builtin")
-		local telescope_utils = require("telescope.utils")
 		local vnoremap = require("core/keymap").vnoremap
 		local func = require("core/functions")
 		vnoremap("<C-f>", function()
 			local text = func.getVisualSelection()
-			telescope_builtin.live_grep({ default_text = text, cwd = telescope_utils.buffer_dir() })
+			telescope_builtin.live_grep({ default_text = text, hidden=true })
 		end, { silent=true })
 		vnoremap("<C-p>", function()
 			local text = func.getVisualSelection()
-			telescope_builtin.find_files({ default_text = text, cwd = telescope_utils.buffer_dir() })
+			telescope_builtin.find_files({ default_text = text, hidden=true })
 		end, { silent=true})
 	end
 }

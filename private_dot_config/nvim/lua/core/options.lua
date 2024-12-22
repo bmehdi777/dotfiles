@@ -23,5 +23,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 
 vim.opt.colorcolumn = "80"
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

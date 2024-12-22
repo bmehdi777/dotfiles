@@ -3,7 +3,9 @@ return {
 	dependencies = {
 		{"jose-elias-alvarez/null-ls.nvim"}
 	},
-	opts = {
+	config = function()
+		local prettier = require("prettier")
+		prettier.setup({
 			bin = 'prettier',
 			filetypes = {
 				"css",
@@ -19,5 +21,6 @@ return {
 				trailling_coma = "all",
 				single_quote = false,
 			}
-	}
+		})
+	end
 }

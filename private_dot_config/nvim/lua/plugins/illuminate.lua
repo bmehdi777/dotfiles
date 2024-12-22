@@ -1,7 +1,7 @@
 return {
 	"RRethy/vim-illuminate",
 	config = function()
-		require("illuminate").configure({
+		local illuminate = require("illuminate").configure({
 			proivders = {
 				'lsp',
 				'treesitter',
@@ -12,7 +12,6 @@ return {
 				'dirbuf',
 				'dirvish',
 				'fugitive',
-				'NvimTree'
 			},
 			filetypes_allowlist = {},
 			modes_denylist = {},
