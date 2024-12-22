@@ -88,7 +88,8 @@ nnoremap("<C-f>", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>gb", "<cmd>Telescope git_branches<CR>")
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
-nnoremap("<leader>tr", "<cmd> Telescope resume<CR>")
+nnoremap("<leader>tt", "<cmd>Telescope resume<CR>")
+nnoremap("<leader>tr", "<cmd>Telescope lsp_references<CR>")
 
 -- Oil
 nnoremap("<leader>o", ":Oil --float<CR>", { silent = true })

@@ -10,6 +10,11 @@ return {
 
 
 		telescope.setup({
+			pickers = {
+				lsp_references = {
+					theme = "ivy"
+				},
+			},
 			defaults = {
 				file_ignore_patterns = { "node_modules", "^.git$" },
 				vimgrep_arguments = {
