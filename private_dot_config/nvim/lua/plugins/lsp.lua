@@ -17,10 +17,26 @@ return {
 		local servers = {
 			"clangd",
 			"rust_analyzer",
-			"ts_ls",
+			ts_ls = {
+				capabilities = capabilities,
+				commands = {
+					OrganizeImports = {
+						function()
+							local params = {
+								command = "_typescript.organizeImports",
+								arguments = {vim.api.nvim_buf_get_name(0)},
+								title = ""
+							}
+							vim.lsp.buf.execute_command(params)
+						end,
+						description = "Organize Imports"
+					}
+				}
+			},
 			"quick_lint_js",
 		}
 		local function config(_config)
+			print(_config)
 			return vim.tbl_deep_extend("force", {
 				on_attach = on_attach,
 			}, _config or {})
@@ -34,9 +50,10 @@ return {
 		})
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
-					nvim_lsp[server_name].setup(config())
+					nvim_lsp[server_name].setup(config(servers[server_name]))
 			end
 		})
+
 
 
 		vim.api.nvim_create_autocmd('LspAttach', {
