@@ -36,7 +36,6 @@ return {
 			"quick_lint_js",
 		}
 		local function config(_config)
-			print(_config)
 			return vim.tbl_deep_extend("force", {
 				on_attach = on_attach,
 			}, _config or {})
