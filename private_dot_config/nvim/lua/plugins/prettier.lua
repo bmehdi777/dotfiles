@@ -1,7 +1,7 @@
 return {
 	"MunifTanjim/prettier.nvim",
 	dependencies = {
-		{"jose-elias-alvarez/null-ls.nvim"}
+		{"nvimtools/none-ls.nvim"}
 	},
 	config = function()
 		local prettier = require("prettier")
