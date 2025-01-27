@@ -49,7 +49,7 @@ return {
 		})
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
-					nvim_lsp[server_name].setup(config(servers[server_name]))
+				nvim_lsp[server_name].setup(config(servers[server_name]))
 			end
 		})
 
@@ -100,6 +100,14 @@ return {
 				{ name = "vim-dadbod-completion"},
 				{ name = "buffer" },
 			}
+		})
+
+		vim.diagnostic.config({
+			virtual_lines = true,
+			virtual_text = {
+				virt_text_pos='eol',
+				-- virt_text_pos='eol_right_align', <- when it will be out in the next nvim version (perhaps v.0.12)
+			},
 		})
 	end
 }
