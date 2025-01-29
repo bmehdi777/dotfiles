@@ -29,6 +29,7 @@ gcof() {
   git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
 }
 
+alias icurl='curl -w "\ndnslookup: %{time_namelookup}s\nconnect: %{time_connect}s\nappconnect: %{time_appconnect}s\npretransfer: %{time_pretransfer}s\nredirect: %{time_redirect}s\nstarttransfer: %{time_starttransfer}s\ntotal: %{time_total}s\nsize: %{size_download}\n"'
 alias lg='lazygit'
 
 {{ if eq .chezmoi.os "darwin"}}
