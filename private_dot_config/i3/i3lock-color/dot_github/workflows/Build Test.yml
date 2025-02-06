@@ -1,0 +1,25 @@
+name: Build Test
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install deps
+      run: |
+        sudo apt update
+        sudo apt install pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+    - name: Build
+      run: ./build.sh
+    - name: Check and distcheck
+      run: |
+        cd build
+        make check
+        make distcheck
+    - name: Upload binary artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: i3lock
+        path: /home/runner/work/i3lock-color/i3lock-color/build/i3lock
+    - run: ./install-i3lock-color.sh
