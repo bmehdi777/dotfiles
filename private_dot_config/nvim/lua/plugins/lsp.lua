@@ -13,12 +13,10 @@ return {
 		{ "rafamadriz/friendly-snippets"},
 	},
 	config = function()
-		local nvim_lsp = require("lspconfig")
 		local servers = {
 			"clangd",
 			"rust_analyzer",
 			ts_ls = {
-				capabilities = capabilities,
 				commands = {
 					OrganizeImports = {
 						function()
@@ -35,11 +33,6 @@ return {
 			},
 			"quick_lint_js",
 		}
-		local function config(_config)
-			return vim.tbl_deep_extend("force", {
-				on_attach = on_attach,
-			}, _config or {})
-		end
 
 		require("mason").setup({
 			PATH = "append" -- mason binary are added at the end of the path, ensuring that mason take the system lsp first if it encounters it
@@ -47,13 +40,16 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = servers,
 		})
-		require("mason-lspconfig").setup_handlers({
-			function(server_name)
-				nvim_lsp[server_name].setup(config(servers[server_name]))
-			end
+
+		-- force relative import
+		vim.lsp.config("ts_ls", {
+			init_options = {
+				preferences = {
+					importModuleSpecifier = "non-relative",
+					importModuleSpecifierPreference = "non-relative",
+				}
+			}
 		})
-
-
 
 		vim.api.nvim_create_autocmd('LspAttach', {
 			group = vim.api.nvim_create_augroup('UserLspConfig', {}),

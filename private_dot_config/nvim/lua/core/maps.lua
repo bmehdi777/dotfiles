@@ -88,6 +88,7 @@ nnoremap("<C-f>", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>gb", "<cmd>Telescope git_branches<CR>")
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
+nnoremap("<leader>gs", "<cmd>Telescope git_status<CR>")
 nnoremap("<leader>tt", "<cmd>Telescope resume<CR>")
 nnoremap("<leader>tr", "<cmd>Telescope lsp_references<CR>")
 
@@ -102,3 +103,6 @@ nnoremap("<leader>Gs", ":Git<CR>", { silent=true })
 nnoremap("<leader>Gd", ":Gvdiffsplit!<CR>", { silent=true })
 nnoremap("<leader>Go", ":GBrowse<CR>", { silent=true })
 nnoremap("<leader>Gb", ":Git blame<CR>", { silent=true })
+
+-- Copilot
+inoremap("<C-y>", "copilot#Accept(<Tab>)", { silent=true, expr=true, script=true, replace_keycodes = false })
