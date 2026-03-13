@@ -99,7 +99,7 @@ return {
 		})
 
 		vim.diagnostic.config({
-			virtual_lines = true,
+			virtual_lines = false,
 			virtual_text = {
 				virt_text_pos='eol',
 				-- virt_text_pos='eol_right_align', <- when it will be out in the next nvim version (perhaps v.0.12)
