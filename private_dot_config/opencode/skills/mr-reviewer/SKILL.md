@@ -1,5 +1,5 @@
 ---
-name: gitlab_mr_review
+name: gitlab-mr-review
 description: "Review technique de Merge Requests GitLab via glab"
 ---
 ## Objectif
