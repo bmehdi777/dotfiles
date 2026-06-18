@@ -7,3 +7,6 @@ sh ~/.fehbg &
 xset r rate 400 50 &
 xset -dpms &
 xset s off
+
+~/.config/eww/open-bars.sh &
+~/.config/eww/watch-monitors.sh &
