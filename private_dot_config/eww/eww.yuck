@@ -1,0 +1,110 @@
+(deflisten wsmap :initial "{}" "~/.config/eww/workspaces.sh; i3-msg -t subscribe -m '[\"workspace\",\"output\"]' | while read -r _; do ~/.config/eww/workspaces.sh; done")
+(deflisten volume :initial "{\"vol\":0,\"muted\":false}" "~/.config/eww/volume-listen.sh")
+(deflisten network :initial "{\"type\":\"down\",\"name\":\"\",\"up\":false}" "~/.config/eww/network-listen.sh")
+(defpoll media :interval "2s" :initial "{\"available\":false,\"player\":\"\",\"status\":\"Stopped\",\"title\":\"No media\",\"display_title\":\"No media\",\"artist\":\"\",\"players\":0}" "~/.config/eww/media.sh")
+(defpoll kblayout :interval "10s" :initial "US" "~/.config/eww/kblayout.sh get")
+
+(defwidget monitor-workspaces [monitor]
+  (box :class "workspace-wrap" :hexpand false :halign "start"
+    (literal :content { wsmap[monitor] ?: "(box :class \"workspace-list\")" })))
+
+(defwidget cpu []
+  (box :class "module cpu" :space-evenly false :spacing 6
+    (label :class "icon" :text "")
+    (label :text "${round(EWW_CPU.avg, 0)}%")))
+
+(defwidget ram []
+  (box :class "module ram" :space-evenly false :spacing 6
+    (label :class "icon" :text "󰍛")
+    (label :text "${round(100 - EWW_RAM.used_mem_perc, 0)}% left (${round(EWW_RAM.used_mem_perc, 0)}% used)")))
+
+(defwidget volume []
+  (box :class "module volume" :space-evenly false :spacing 6
+    (label :class "icon" :text {volume.muted ? "" : ""})
+    (label :text {volume.muted ? "muted" : "${volume.vol}%"})))
+
+(defwidget battery []
+  (box :class "module battery" :space-evenly false :spacing 6
+    (label :class "icon" :text {EWW_BATTERY.BAT0.status == "Charging" ? "" : ""})
+    (label :text "${EWW_BATTERY.BAT0.capacity}%")))
+
+(defwidget network []
+  (button :class "module network"
+          :onclick "nm-connection-editor"
+          :onrightclick "wezterm start -- nmtui"
+    (box :space-evenly false :spacing 6
+      (label :class "icon" :text {network.type == "wifi" ? "" : network.type == "ethernet" ? "" : ""})
+      (label :text {network.up ? (network.name == "" ? network.type : network.name) : "offline"}))))
+
+(defwidget keyboard []
+  (button :class "module keyboard"
+          :onclick "~/.config/eww/kblayout.sh next && ${EWW_CMD} poll kblayout"
+    (box :space-evenly false :spacing 6
+      (label :class "icon" :text "")
+      (label :text kblayout))))
+
+(defwidget media-toggle [monitor]
+  (button :class "module media-toggle"
+          :onclick "~/.config/eww/media-toggle.sh ${monitor}"
+    (box :space-evenly false :spacing 6
+      (label :class "icon" :text "")
+      (label :text {media.available ? (media.display_title == "" ? "Media" : media.display_title) : "No media"}))))
+
+(defwidget media-popup-content []
+  (box :class "media-popup"
+    (box :class "media-popup-body" :orientation "v" :spacing 4
+      (label :class "media-main" :wrap true :limit-width 26
+             :text {media.available ? (media.display_title == "" ? "Unknown title" : media.display_title) : "Nothing is playing"})
+      (label :class "media-sub" :wrap true :limit-width 26
+             :text {media.available ? (media.artist == "" ? media.player : media.artist) : "Start Spotify/Chrome and play audio"})
+      (label :class "media-status"
+             :text {media.available ? "Player: ${media.player} - ${media.status}" : "Status: idle"})
+      (button :class "media-switch"
+              :visible {media.players > 1}
+              :onclick "~/.config/eww/media-switch.sh && ${EWW_CMD} poll media"
+        (label :text "Switch player (${media.players})"))
+      (box :halign "center" :hexpand true
+        (box :class "media-controls" :space-evenly false :spacing 8
+          (button :class "media-btn"
+                  :onclick "playerctl -p ${media.player} previous >/dev/null 2>&1; ${EWW_CMD} poll media"
+            "")
+          (button :class "media-btn"
+                  :onclick "playerctl -p ${media.player} play-pause >/dev/null 2>&1; ${EWW_CMD} poll media"
+            {media.status == "Playing" ? "" : ""})
+          (button :class "media-btn"
+                  :onclick "playerctl -p ${media.player} next >/dev/null 2>&1; ${EWW_CMD} poll media"
+            "")
+          (button :class "close-btn" :onclick "~/.config/eww/media-close.sh" "x"))))))
+
+(defwidget clock []
+  (box :class "module clock" :space-evenly false :spacing 8
+    (label :class "icon" :text "")
+    (label :text "${formattime(EWW_TIME, '%a %d %b')}")
+    (label :class "time" :text "${formattime(EWW_TIME, '%H:%M')}")))
+
+(defwidget metrics [monitor]
+  (box :class "metrics" :space-evenly false :halign "end" :spacing 8
+    (cpu)
+    (ram)
+    (volume)
+    (battery)
+    (keyboard)
+    (network)
+    (media-toggle :monitor monitor)))
+
+(defwindow media-popup [monitor]
+  :monitor monitor
+  :geometry (geometry :x "0px" :y "-32px" :width "280px" :height "160px" :anchor "bottom right")
+  :stacking "fg"
+  (media-popup-content))
+
+(defwindow bar [monitor]
+  :monitor monitor
+  :geometry (geometry :x "0%" :y "0px" :width "100%" :height "30px" :anchor "bottom center")
+  :stacking "fg"
+  :reserve (struts :distance "30px" :side "bottom")
+  (eventbox :class "bar-scroll" :onscroll "~/.config/eww/ws-scroll.sh ${monitor} {}"
+    (centerbox :class "bar"
+      (monitor-workspaces :monitor monitor)
+      (clock)
+      (metrics :monitor monitor))))

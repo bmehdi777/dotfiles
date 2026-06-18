@@ -1,0 +1,230 @@
+* { all: unset; }
+
+// ── Reset GTK theme button chrome ─────────────────────────────────────────
+// The active GTK theme (Yaru) styles every `button` with min-height: 24px,
+// a border, padding and a grey `background-image` that paints over our colors.
+// Neutralise it here so our class rules fully control sizing & background.
+button {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+}
+
+// ── Tokyo Night palette ───────────────────────────────────────────────────
+$bg:            #1a1b26;
+$bg_dark:       #16161e;
+$bg_highlight:  #292e42;
+$fg_gutter:     #3b4261;
+$terminal_blk:  #414868;
+$comment:       #565f89;
+$fg:            #c0caf5;
+$fg_dark:       #a9b1d6;
+$blue:          #7aa2f7;
+$cyan:          #7dcfff;
+$blue5:         #89ddff;
+$magenta:       #bb9af7;
+$purple:        #9d7cd8;
+$orange:        #ff9e64;
+$yellow:        #e0af68;
+$green:         #9ece6a;
+$green1:        #73daca;
+$teal:          #1abc9c;
+$red:           #f7768e;
+
+// ── Bar container ─────────────────────────────────────────────────────────
+.bar {
+  background-color: $bg_dark;
+  color: $fg;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  padding: 0 8px;
+  border-top: 2px solid $bg_highlight;
+}
+
+// ── Workspaces (compact) ──────────────────────────────────────────────────
+.workspace-list {
+  margin-left: 2px;
+}
+
+.workspace-wrap {
+  min-width: 0;
+}
+
+.workspace-btn {
+  margin: 6px 1px;
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background-color: transparent;
+  color: $comment;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+
+.workspace-btn:hover {
+  background-image: none;
+  background-color: $bg_highlight;
+  color: $fg;
+}
+
+.workspace-btn.active {
+  background-color: $fg_gutter;
+  color: $fg_dark;
+}
+
+.workspace-btn.focused {
+  background-color: $blue;
+  color: $bg_dark;
+  font-weight: 700;
+}
+
+.workspace-btn.urgent {
+  background-color: $red;
+  color: $bg_dark;
+  font-weight: 700;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%   { background-color: $red; }
+  50%  { background-color: $orange; }
+  100% { background-color: $red; }
+}
+
+// ── Modules (metrics) ─────────────────────────────────────────────────────
+.metrics {
+  margin-right: 2px;
+}
+
+.module {
+  margin: 5px 0;
+  padding: 0 9px;
+  border-radius: 2px;
+  background-color: $bg_highlight;
+  color: $fg;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 150ms ease;
+}
+
+button.module:hover {
+  background-image: none;
+  background-color: $fg_gutter;
+}
+
+.module .icon {
+  font-size: 12px;
+  color: $blue;
+}
+
+.module.cpu      .icon { color: $red; font-size: 14px; }
+.module.ram      .icon { color: $orange; font-size: 14px; }
+.module.media-toggle .icon { color: $cyan; }
+.module.volume   .icon { color: $green; }
+.module.battery  .icon { color: $yellow; }
+.module.keyboard .icon { color: $magenta; }
+.module.network  .icon { color: $cyan; }
+
+// ── Clock (centered) ──────────────────────────────────────────────────────
+.clock {
+  margin: 5px 0;
+  padding: 0 14px;
+  border-radius: 2px;
+  background-color: $bg_highlight;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clock .icon {
+  color: $magenta;
+}
+
+.clock .time {
+  color: $blue;
+  font-weight: 700;
+}
+
+// ── Media popup ────────────────────────────────────────────────────────────
+.media-popup {
+  background-color: $bg_dark;
+  border: 1px solid $fg_gutter;
+  border-radius: 10px;
+  padding: 8px;
+  color: $fg;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.media-popup .close-btn {
+  min-height: 0;
+  min-width: 0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: $bg_highlight;
+  color: $fg;
+}
+
+.media-popup .close-btn:hover {
+  background-image: none;
+  background-color: $fg_gutter;
+}
+
+.media-main {
+  color: $fg;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.media-sub {
+  color: $fg_dark;
+  font-size: 11px;
+}
+
+.media-status {
+  color: $comment;
+  font-size: 10px;
+}
+
+.media-switch {
+  margin-top: 0;
+  min-height: 20px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background-color: $bg_highlight;
+  color: $fg_dark;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.media-switch:hover {
+  background-image: none;
+  background-color: $fg_gutter;
+  color: $fg;
+}
+
+.media-controls {
+  margin-top: 2px;
+}
+
+.media-btn {
+  min-width: 24px;
+  min-height: 20px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background-color: $bg_highlight;
+  color: $fg;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.media-btn:hover {
+  background-image: none;
+  background-color: $fg_gutter;
+}
